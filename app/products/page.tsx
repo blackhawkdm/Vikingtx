@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import ProductSection from "@/components/ProductSection";
+import Image from "next/image";
+import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
@@ -8,146 +9,178 @@ export const metadata: Metadata = {
     "Viking manufactures ASME code and non-code pressure vessels, heater treaters, separators, vapor recovery towers, API storage tanks, and specialty vessels — including cooling vessels for data center applications.",
 };
 
+const products = [
+  {
+    id: "heater-treaters",
+    num: "01",
+    title: "Heater Treaters",
+    description:
+      "Vertical and horizontal configurations. Code and non-code. Designed and built in-house at our Odessa facility.",
+    caps: ["Code or non-code", "Vertical or horizontal", "Internal coating", "Custom design", "Valves & accessories"],
+    imageSrc: "/images/Gaupo5.webp",
+    imageAlt: "Viking heater treaters in service",
+  },
+  {
+    id: "separators",
+    num: "02",
+    title: "Separators",
+    description:
+      "Two-phase and three-phase separation. Pneumatic or mechanical level controllers. Built to your application.",
+    caps: ["Code or non-code", "Vertical or horizontal", "2-phase or 3-phase", "Pneumatic or mechanical controllers", "Internal coating", "Custom designed", "Valves & accessories"],
+    imageSrc: "/images/Gaupo7.webp",
+    imageAlt: "Viking separator vessels in service",
+  },
+  {
+    id: "free-water-knockouts",
+    num: "03",
+    title: "Free Water Knockouts",
+    description: "A/B/C style designs. Code and non-code. Internal coating available.",
+    caps: ["Code or non-code", "A/B/C style design", "Internal coating", "Custom designed", "Valves & accessories"],
+    imageSrc: "/images/Gaupo2.webp",
+    imageAlt: "Viking vessels on location",
+  },
+  {
+    id: "vapor-recovery-towers",
+    num: "04",
+    title: "Vapor Recovery Towers",
+    description:
+      "Engineered for vapor recovery with external piping installed and internal coating available.",
+    caps: ["Code or non-code", "External piping installed", "Internal coating", "Custom design"],
+    imageSrc: "/images/Gaupo4.webp",
+    imageAlt: "Viking tank battery with vapor recovery",
+  },
+  {
+    id: "specialty-vessels",
+    num: "05",
+    title: "Specialty Pressure Vessels",
+    description:
+      "Knock drums, gas scrubbers, data center cooling vessels, and custom-purpose pressure vessels. Contact us with your specific need — our team will help you design the right vessel.",
+    caps: ["Knock drums", "Gas scrubbers", "Data center cooling vessels", "Custom-purpose vessels", "Engineer-assisted sizing"],
+    imageSrc: "/images/Drago1.webp",
+    imageAlt: "Viking large specialty vessels delivered on site",
+  },
+  {
+    id: "storage-tanks",
+    num: "06",
+    title: "API Storage Tanks",
+    description:
+      "Built to API standards with full customization. Standard and non-standard configurations available.",
+    caps: [
+      "Coupling, flange & grooved connections",
+      "8oz or 16oz on 15'6\" diameter",
+      "One or two-piece cleanout doors",
+      "Downcomers & roll lines",
+      "Internal coating",
+      "Walkway & stairways",
+    ],
+    imageSrc: "/images/Gaupo3.webp",
+    imageAlt: "Viking API storage tank battery aerial view",
+  },
+];
+
 export default function ProductsPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-viking-black py-14 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative bg-viking-black overflow-hidden py-16 px-4">
+        <div className="absolute inset-0 opacity-5" aria-hidden="true"
+          style={{ backgroundImage: "repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 1px, transparent 40px)" }}
+        />
+        <div className="relative max-w-7xl mx-auto">
+          <p className="text-viking-accent text-xs font-bold uppercase tracking-widest mb-3">Viking Inc.</p>
           <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">Products</h1>
-          <p className="text-white/70 mt-3 max-w-2xl text-lg">
-            Custom-built vessels and tanks for the oil and gas industry. Every unit built to your
-            spec — code or non-code, standard or fully custom.
+          <p className="text-white/60 mt-3 max-w-2xl text-lg">
+            Custom-built vessels and tanks. Every unit built to your spec — code or non-code, standard or fully custom.
           </p>
         </div>
       </section>
 
-      {/* Quick nav anchors */}
-      <nav className="bg-viking-light border-b border-viking-border sticky top-16 z-40 overflow-x-auto" aria-label="Products quick navigation">
-        <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 py-2 min-w-max">
-          {[
-            { href: "#heater-treaters", label: "Heater Treaters" },
-            { href: "#separators", label: "Separators" },
-            { href: "#free-water-knockouts", label: "Free Water Knockouts" },
-            { href: "#vapor-recovery-towers", label: "VRTs" },
-            { href: "#specialty-vessels", label: "Specialty Vessels" },
-            { href: "#storage-tanks", label: "Storage Tanks" },
-          ].map(({ href, label }) => (
+      {/* Sticky anchor nav */}
+      <nav className="bg-white border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow-sm" aria-label="Products navigation">
+        <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 py-0 min-w-max">
+          {products.map(({ id, num, title }) => (
             <a
-              key={href}
-              href={href}
-              className="whitespace-nowrap text-sm font-semibold text-viking-gray hover:text-viking-accent px-3 py-1.5 rounded transition-colors"
+              key={id}
+              href={`#${id}`}
+              className="flex items-center gap-2 text-xs font-bold text-viking-gray hover:text-viking-accent hover:bg-viking-light px-4 py-3.5 border-b-2 border-transparent hover:border-viking-accent transition-all whitespace-nowrap uppercase tracking-wide"
             >
-              {label}
+              <span className="text-viking-accent/40">{num}</span>
+              {title}
             </a>
           ))}
         </div>
       </nav>
 
-      {/* Products */}
-      <ProductSection
-        id="heater-treaters"
-        title="Heater Treaters"
-        description="Vertical and horizontal configurations. Code and non-code. Designed and built in-house at our Odessa facility."
-        capabilities={[
-          "Code or non-code",
-          "Vertical or horizontal",
-          "Internal coating",
-          "Custom design",
-          "Valves and accessories",
-        ]}
-        imageSrc="/images/Gaupo5.webp"
-        imageAlt="Viking Inc. heater treaters and separators in service — aerial view"
-      />
+      {/* Product sections */}
+      {products.map((p, i) => (
+        <section
+          key={p.id}
+          id={p.id}
+          className={`scroll-mt-28 ${i % 2 === 0 ? "bg-white" : "bg-viking-light"} border-b border-viking-border`}
+        >
+          <div className="max-w-7xl mx-auto">
+            <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
 
-      <ProductSection
-        id="separators"
-        title="Separators"
-        description="Two-phase and three-phase separation. Pneumatic or mechanical level controllers. Built to your application."
-        capabilities={[
-          "Code or non-code",
-          "Vertical or horizontal",
-          "2-phase or 3-phase",
-          "Pneumatic or mechanical level controllers",
-          "Internal coating",
-          "Custom designed",
-          "Valves and accessories",
-        ]}
-        imageSrc="/images/Gaupo7.webp"
-        imageAlt="Viking Inc. separator vessels in service"
-        reverse
-      />
+              {/* Image panel */}
+              <div className="relative w-full lg:w-[45%] min-h-[300px] lg:min-h-[400px] overflow-hidden">
+                <Image
+                  src={p.imageSrc}
+                  alt={p.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+                {/* Number overlay */}
+                <div className="absolute bottom-4 left-4 text-[80px] font-black text-white/10 leading-none select-none pointer-events-none">
+                  {p.num}
+                </div>
+              </div>
 
-      <ProductSection
-        id="free-water-knockouts"
-        title="Free Water Knockouts"
-        description="A/B/C style designs. Code and non-code. Internal coating available."
-        capabilities={[
-          "Code or non-code",
-          "A/B/C style design",
-          "Internal coating",
-          "Custom designed",
-          "Valves and accessories",
-        ]}
-        imageSrc="/images/Gaupo2.webp"
-        imageAlt="Viking Inc. vessels on location"
-      />
+              {/* Content panel */}
+              <div className="w-full lg:w-[55%] px-6 sm:px-10 py-10 lg:py-12 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-viking-accent/40 text-sm font-black tracking-widest">{p.num}</span>
+                  <div className="h-px flex-1 bg-viking-border max-w-[40px]" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-viking-black tracking-tight mb-3">
+                  {p.title}
+                </h2>
+                <p className="text-viking-gray leading-relaxed mb-6 text-sm sm:text-base">
+                  {p.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {p.caps.map((cap) => (
+                    <span
+                      key={cap}
+                      className="inline-flex items-center gap-1.5 bg-viking-black/5 border border-viking-border text-viking-gray text-xs font-semibold px-3 py-1.5 rounded-full"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-viking-teal flex-shrink-0" />
+                      {cap}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-viking-accent font-bold text-sm hover:text-viking-accent-dark transition-colors group"
+                  >
+                    Request a quote for {p.title}
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
 
-      <ProductSection
-        id="vapor-recovery-towers"
-        title="Vapor Recovery Towers"
-        description="Engineered for vapor recovery with external piping installed and internal coating available."
-        capabilities={[
-          "Code or non-code",
-          "External piping installed",
-          "Internal coating",
-          "Custom design",
-        ]}
-        imageSrc="/images/Gaupo4.webp"
-        imageAlt="Viking Inc. tank battery with vapor recovery"
-        reverse
-      />
-
-      <ProductSection
-        id="specialty-vessels"
-        title="Specialty Pressure Vessels"
-        description="Knock drums, gas scrubbers, data center cooling vessels, and custom-purpose pressure vessels. Contact us with your specific need — our team will help you design a vessel for your application."
-        capabilities={[
-          "Knock drums",
-          "Gas scrubbers",
-          "Data center cooling vessels",
-          "Custom-purpose pressure vessels",
-          "Engineer-assisted sizing and design",
-        ]}
-        imageSrc="/images/Drago1.webp"
-        imageAlt="Viking Inc. large specialty vessels being transported and set on location"
-      />
-
-      <ProductSection
-        id="storage-tanks"
-        title="API Storage Tanks"
-        description="Built to API standards with full customization. Standard and non-standard configurations available."
-        capabilities={[
-          "Coupling, flange, and grooved connections",
-          "8oz or 16oz on 15'6\" diameter tanks",
-          "One or two-piece cleanout doors",
-          "Downcomers and roll lines",
-          "Internal coating",
-          "Custom design",
-          "Walkway and stairways",
-        ]}
-        imageSrc="/images/Gaupo3.webp"
-        imageAlt="Viking Inc. API storage tank battery — aerial view"
-        reverse
-      />
-
-      {/* Sizing Assistance CTA */}
       <CTABanner
         heading="We can assist you in sizing your equipment needs."
         subtext="Contact our team and we'll help you spec the right vessel for your application."
       />
 
-      {/* Design Disclaimer */}
       <section className="py-10 px-4 bg-viking-light border-t border-viking-border">
         <div className="max-w-4xl mx-auto">
           <p className="text-viking-gray text-xs leading-relaxed">

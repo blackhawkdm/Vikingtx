@@ -16,12 +16,14 @@ const team = [
     title: "Operations Manager",
     bio: "Joe Keith brings over 45 years of experience in engineering, design, and sales to Viking. His deep technical knowledge and field expertise ensure every project is spec'd and executed right the first time.",
     imageSrc: "/images/TiffanyWilsohPhotography--4.webp",
+    yearsExp: "45+ Years Experience",
   },
   {
     name: "Michael Ashton",
     title: "President",
     bio: "Michael founded Viking Inc. in 2008 and brings 50 years of experience in the oil industry. His leadership has shaped Viking into a trusted manufacturer known for quality products and on-time delivery.",
     imageSrc: "/images/TiffanyWilsohPhotography-.webp",
+    yearsExp: "50 Years Experience",
   },
   {
     name: "Taylor Grimes",
@@ -100,6 +102,23 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Experience banner */}
+      <section className="bg-viking-black py-10 px-4 border-t border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-xl overflow-hidden">
+          {[
+            { num: "50", label: "Years — Michael Ashton" },
+            { num: "45+", label: "Years — Joe Keith Martin" },
+            { num: "2008", label: "Founded, Odessa TX" },
+            { num: "100+", label: "Combined Industry Years" },
+          ].map(({ num, label }) => (
+            <div key={label} className="bg-viking-black flex flex-col items-center justify-center py-8 px-4 text-center">
+              <span className="text-4xl sm:text-5xl font-black text-viking-accent leading-none tracking-tight">{num}</span>
+              <span className="text-white/50 text-xs font-semibold mt-2 uppercase tracking-wider">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Leadership Team */}
       <section className="py-16 px-4 bg-viking-light border-b border-viking-border">
         <div className="max-w-7xl mx-auto">
@@ -108,7 +127,7 @@ export default function AboutPage() {
               Leadership Team
             </h2>
             <p className="text-viking-gray mt-2 max-w-xl mx-auto">
-              Decades of combined oilfield experience. The people behind every vessel we build.
+              Hover each card to read their story.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -117,7 +136,7 @@ export default function AboutPage() {
             ))}
           </div>
           {/* Group photo */}
-          <div className="mt-12 relative h-72 sm:h-96 rounded-xl overflow-hidden">
+          <div className="mt-12 relative h-72 sm:h-96 rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/images/TiffanyWilsohPhotography--9.webp"
               alt="Viking Inc. leadership team"

@@ -19,7 +19,7 @@ export default function ProductCard({
   return (
     <Link
       href={href}
-      className="group block bg-white rounded-lg overflow-hidden border border-viking-border hover:shadow-lg transition-shadow"
+      className="card-hover group block bg-white rounded-xl overflow-hidden border border-viking-border"
     >
       <div className="relative h-52 bg-viking-light overflow-hidden">
         {imageSrc ? (
@@ -27,7 +27,7 @@ export default function ProductCard({
             src={imageSrc}
             alt={imageAlt ?? title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
@@ -37,13 +37,15 @@ export default function ProductCard({
             </svg>
           </div>
         )}
+        {/* Accent bar on hover */}
+        <div className="absolute bottom-0 left-0 h-0.5 bg-viking-accent w-0 group-hover:w-full transition-all duration-300" />
       </div>
       <div className="p-5">
-        <h3 className="font-bold text-viking-black text-lg mb-1 group-hover:text-viking-accent transition-colors">
+        <h3 className="font-bold text-viking-black text-lg mb-1 group-hover:text-viking-accent transition-colors duration-200">
           {title}
         </h3>
         <p className="text-viking-gray text-sm leading-relaxed">{description}</p>
-        <span className="mt-3 inline-flex items-center gap-1 text-viking-accent text-sm font-semibold">
+        <span className="mt-3 inline-flex items-center gap-1 text-viking-accent text-sm font-semibold group-hover:gap-2 transition-all duration-200">
           View Products
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

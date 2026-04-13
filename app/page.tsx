@@ -83,7 +83,6 @@ export default function HomePage() {
         subhead="ASME Code certified pressure vessel and API tank manufacturer. Odessa, Texas."
         imageSrc="/images/Gaupo1.webp"
         imageAlt="Viking Inc. tank battery installation in the Permian Basin"
-        overlayOpacity="opacity-50"
       />
 
       {/* Product Category Grid */}

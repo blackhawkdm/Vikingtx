@@ -17,18 +17,24 @@ const productCategories = [
     description:
       "Heater treaters, separators, free water knockouts, and vapor recovery towers. Code and non-code. Custom designed.",
     href: "/products#heater-treaters",
+    imageSrc: "/images/Gaupo5.webp",
+    imageAlt: "Viking Inc. pressure vessels in service — aerial view",
   },
   {
     title: "Storage Tanks",
     description:
       "API storage tanks built to your spec — couplings, flanges, internal coating, walkways, and custom configurations.",
     href: "/products#storage-tanks",
+    imageSrc: "/images/Gaupo3.webp",
+    imageAlt: "Viking Inc. API storage tank battery — aerial view",
   },
   {
     title: "Specialty Vessels",
     description:
       "Knock drums, gas scrubbers, data center cooling vessels, and custom-purpose pressure vessels for unique applications.",
     href: "/products#specialty-vessels",
+    imageSrc: "/images/Drago1.webp",
+    imageAlt: "Viking Inc. large specialty vessels being delivered on site",
   },
 ];
 
@@ -75,6 +81,9 @@ export default function HomePage() {
       <HeroBanner
         headline="Precision-Built. Field-Ready."
         subhead="ASME Code certified pressure vessel and API tank manufacturer. Odessa, Texas."
+        imageSrc="/images/Gaupo1.webp"
+        imageAlt="Viking Inc. tank battery installation in the Permian Basin"
+        overlayOpacity="opacity-50"
       />
 
       {/* Product Category Grid */}

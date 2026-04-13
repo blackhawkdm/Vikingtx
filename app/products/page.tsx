@@ -56,6 +56,8 @@ export default function ProductsPage() {
           "Custom design",
           "Valves and accessories",
         ]}
+        imageSrc="/images/Gaupo5.webp"
+        imageAlt="Viking Inc. heater treaters and separators in service — aerial view"
       />
 
       <ProductSection
@@ -71,6 +73,8 @@ export default function ProductsPage() {
           "Custom designed",
           "Valves and accessories",
         ]}
+        imageSrc="/images/Gaupo7.webp"
+        imageAlt="Viking Inc. separator vessels in service"
         reverse
       />
 
@@ -85,6 +89,8 @@ export default function ProductsPage() {
           "Custom designed",
           "Valves and accessories",
         ]}
+        imageSrc="/images/Gaupo2.webp"
+        imageAlt="Viking Inc. vessels on location"
       />
 
       <ProductSection
@@ -97,6 +103,8 @@ export default function ProductsPage() {
           "Internal coating",
           "Custom design",
         ]}
+        imageSrc="/images/Gaupo4.webp"
+        imageAlt="Viking Inc. tank battery with vapor recovery"
         reverse
       />
 
@@ -111,6 +119,8 @@ export default function ProductsPage() {
           "Custom-purpose pressure vessels",
           "Engineer-assisted sizing and design",
         ]}
+        imageSrc="/images/Drago1.webp"
+        imageAlt="Viking Inc. large specialty vessels being transported and set on location"
       />
 
       <ProductSection
@@ -126,6 +136,8 @@ export default function ProductsPage() {
           "Custom design",
           "Walkway and stairways",
         ]}
+        imageSrc="/images/Gaupo3.webp"
+        imageAlt="Viking Inc. API storage tank battery — aerial view"
         reverse
       />
 

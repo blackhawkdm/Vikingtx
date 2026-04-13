@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import TeamMember from "@/components/TeamMember";
 import CertBadges from "@/components/CertBadges";
 import CTABanner from "@/components/CTABanner";
@@ -14,25 +15,36 @@ const team = [
     name: "Joe Keith Martin",
     title: "Operations Manager",
     bio: "Joe Keith brings over 45 years of experience in engineering, design, and sales to Viking. His deep technical knowledge and field expertise ensure every project is spec'd and executed right the first time.",
+    imageSrc: "/images/TiffanyWilsohPhotography--4.webp",
   },
   {
     name: "Michael Ashton",
     title: "President",
     bio: "Michael founded Viking Inc. in 2008 and brings 50 years of experience in the oil industry. His leadership has shaped Viking into a trusted manufacturer known for quality products and on-time delivery.",
+    imageSrc: "/images/TiffanyWilsohPhotography-.webp",
   },
   {
     name: "Taylor Grimes",
     title: "Team Member",
     bio: "Bio to be provided.",
+    imageSrc: "/images/TiffanyWilsohPhotography--5.webp",
   },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-viking-black py-14 px-4">
-        <div className="max-w-7xl mx-auto">
+      {/* Page Header — group photo hero */}
+      <section className="relative bg-viking-black overflow-hidden">
+        <Image
+          src="/images/TiffanyWilsohPhotography--6.webp"
+          alt="Viking Inc. leadership team — Joe Keith Martin, Michael Ashton, and Taylor Grimes"
+          fill
+          priority
+          className="object-cover object-top opacity-30"
+          sizes="100vw"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">About Viking</h1>
           <p className="text-white/70 mt-3 max-w-2xl text-lg">
             Founded in 2008 in Odessa, Texas. Built on quality products and on-time deliveries.
@@ -104,6 +116,16 @@ export default function AboutPage() {
               <TeamMember key={member.name} {...member} />
             ))}
           </div>
+          {/* Group photo */}
+          <div className="mt-12 relative h-72 sm:h-96 rounded-xl overflow-hidden">
+            <Image
+              src="/images/TiffanyWilsohPhotography--9.webp"
+              alt="Viking Inc. leadership team"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+          </div>
         </div>
       </section>
 
@@ -111,14 +133,14 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-white border-b border-viking-border">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Facility image placeholder */}
-            <div className="relative h-72 sm:h-96 bg-viking-light rounded-lg border border-viking-border flex items-center justify-center overflow-hidden">
-              <div className="text-viking-gray/20 text-center">
-                <svg className="w-24 h-24 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                </svg>
-                <p className="text-sm mt-2">Facility photo coming soon</p>
-              </div>
+            <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden">
+              <Image
+                src="/images/Gaupo3.webp"
+                alt="Viking Inc. tank battery installation — aerial view"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
             <div>
               <h2 className="text-3xl font-black text-viking-black tracking-tight mb-4">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -23,11 +24,17 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-white font-bold text-xl tracking-wide uppercase"
+            className="flex items-center"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="text-viking-accent text-2xl font-black">VIKING</span>
-            <span className="text-white/60 text-sm font-medium hidden sm:block">INC.</span>
+            <Image
+              src="/images/viking-logo.png"
+              alt="Viking Inc."
+              width={120}
+              height={93}
+              className="h-10 w-auto invert"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

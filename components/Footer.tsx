@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const currentYear = new Date().getFullYear();
 
@@ -9,9 +10,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <div className="text-viking-accent text-2xl font-black uppercase tracking-wide mb-3">
-              VIKING <span className="text-white/60 text-base font-medium">INC.</span>
-            </div>
+            <Link href="/" className="inline-block mb-3">
+              <Image
+                src="/images/viking-logo.png"
+                alt="Viking Inc."
+                width={140}
+                height={108}
+                className="h-14 w-auto invert"
+              />
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed">
               ASME Code certified pressure vessel and API tank manufacturer.
               Odessa, Texas. Built for the oilfield since 2008.

@@ -35,6 +35,8 @@ export default function ServicesPage() {
           "Tank battery relocation services",
           "Odessa, TX based — serving the Permian Basin and beyond",
         ]}
+        imageSrc="/images/Drago1.webp"
+        imageAlt="Viking Inc. delivering large vessels on location — aerial view"
       />
 
       {/* Internal Coating */}
@@ -48,6 +50,8 @@ export default function ServicesPage() {
           "Applied to pressure vessels and storage tanks",
           "Corrosion protection for extended service life",
         ]}
+        imageSrc="/images/Gaupo1.webp"
+        imageAlt="Viking Inc. completed tank battery installation"
         reverse
       />
 

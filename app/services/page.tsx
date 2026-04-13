@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CTABanner from "@/components/CTABanner";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Coating, Delivery & Equipment Setting",
@@ -74,19 +75,12 @@ const certs = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="relative bg-viking-black overflow-hidden py-16 px-4">
-        <div className="absolute inset-0 opacity-5" aria-hidden="true"
-          style={{ backgroundImage: "repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 1px, transparent 40px)" }}
-        />
-        <div className="relative max-w-7xl mx-auto">
-          <p className="text-viking-accent text-xs font-bold uppercase tracking-widest mb-3">Viking Inc.</p>
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">Services</h1>
-          <p className="text-white/60 mt-3 max-w-2xl text-lg">
-            Beyond manufacturing — Viking coats, delivers, sets, and repairs.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        headline="Services"
+        subhead="Beyond manufacturing — Viking coats, delivers, sets, and repairs. Full-service from our Odessa facility."
+        imageSrc="/images/Drago1.webp"
+        imageAlt="Viking Inc. delivering large vessels on location"
+      />
 
       {/* Service sections */}
       {services.map((svc, i) => (

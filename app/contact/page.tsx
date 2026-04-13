@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Contact Viking | Request a Quote",
@@ -11,15 +12,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-viking-black py-14 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">Contact Us</h1>
-          <p className="text-white/70 mt-3 max-w-2xl text-lg">
-            We respond fast. Call for immediate assistance or fill out the form below.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        headline="Contact Us"
+        subhead="We respond fast. Call for immediate assistance or fill out the form below."
+        imageSrc="/images/TiffanyWilsohPhotography--8.webp"
+        imageAlt="Viking Inc. leadership team"
+      />
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">

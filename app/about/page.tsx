@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import TeamMember from "@/components/TeamMember";
 import CertBadges from "@/components/CertBadges";
 import CTABanner from "@/components/CTABanner";
@@ -36,21 +37,94 @@ const team = [
 export default function AboutPage() {
   return (
     <>
-      {/* Page Header — group photo hero */}
-      <section className="relative bg-viking-black overflow-hidden">
-        <Image
-          src="/images/TiffanyWilsohPhotography--6.webp"
-          alt="Viking Inc. leadership team — Joe Keith Martin, Michael Ashton, and Taylor Grimes"
-          fill
-          priority
-          className="object-cover object-top opacity-30"
-          sizes="100vw"
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">About Viking</h1>
-          <p className="text-white/70 mt-3 max-w-2xl text-lg">
-            Founded in 2008 in Odessa, Texas. Built on quality products and on-time deliveries.
-          </p>
+      {/* ── Hero — group photo split ── */}
+      <section className="relative bg-viking-black overflow-hidden min-h-[480px] flex flex-col">
+        <div className="relative z-10 flex flex-col lg:flex-row flex-1">
+
+          {/* Left content */}
+          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:py-20 w-full lg:w-[52%]">
+            <p className="animate-fade-up text-viking-accent text-xs font-bold uppercase tracking-widest mb-4">
+              Viking Inc. — Odessa, Texas
+            </p>
+            <h1 className="animate-fade-up-delay-1 text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+              Built on Experience.<br />
+              <span className="text-viking-accent">Founded in 2008.</span>
+            </h1>
+            <p className="animate-fade-up-delay-2 text-white/65 text-base sm:text-lg leading-relaxed mb-8 max-w-md">
+              Three leaders. Over 100 combined years in the oilfield. Every vessel we build carries that knowledge.
+            </p>
+            <div className="animate-fade-up-delay-3 flex flex-col sm:flex-row items-start gap-3">
+              <a
+                href="tel:4323371900"
+                className="inline-flex items-center gap-2 bg-viking-accent hover:bg-viking-accent-dark text-white font-bold px-6 py-3.5 rounded-lg text-base transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-viking-accent/20"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                Call 432-337-1900
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border border-white/30 text-white hover:border-white/60 hover:bg-white/5 font-semibold px-6 py-3.5 rounded-lg text-base transition-all duration-200"
+              >
+                Request a Quote
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Right — group photo */}
+          <div className="hidden lg:block relative w-[48%] min-h-[480px]">
+            <div className="clip-diagonal absolute inset-0">
+              <Image
+                src="/images/TiffanyWilsohPhotography--9.webp"
+                alt="Viking Inc. leadership — Joe Keith Martin, Michael Ashton, and Taylor Grimes"
+                fill
+                priority
+                className="object-cover object-top"
+                sizes="48vw"
+              />
+              {/* Subtle dark vignette on right edge */}
+              <div className="absolute inset-0 bg-gradient-to-l from-viking-black/20 to-transparent" />
+            </div>
+          </div>
+
+          {/* Mobile: photo strip below text */}
+          <div className="lg:hidden relative h-72 w-full">
+            <Image
+              src="/images/TiffanyWilsohPhotography--9.webp"
+              alt="Viking Inc. leadership team"
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-viking-black/60 to-transparent" />
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div className="relative z-10 border-t border-white/10 bg-white/[0.04]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              {[
+                { value: "50", label: "Years — Michael Ashton" },
+                { value: "45+", label: "Years — Joe Keith Martin" },
+                { value: "2008", label: "Founded in Odessa, TX" },
+                { value: "100+", label: "Combined Industry Years" },
+              ].map((s, i) => (
+                <div
+                  key={s.label}
+                  className={`py-4 px-4 flex flex-col items-center sm:items-start ${i < 3 ? "border-r border-white/10" : ""}`}
+                >
+                  <span className="text-xl sm:text-2xl font-black text-viking-accent leading-none">{s.value}</span>
+                  <span className="text-white/50 text-xs font-medium mt-0.5 uppercase tracking-wide">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -91,7 +165,7 @@ export default function AboutPage() {
               ].map(({ stat, label }) => (
                 <div
                   key={label}
-                  className="bg-viking-light rounded-lg p-6 border border-viking-border text-center"
+                  className="card-hover bg-viking-light rounded-xl p-6 border border-viking-border text-center"
                 >
                   <div className="text-2xl font-black text-viking-accent mb-1">{stat}</div>
                   <div className="text-viking-gray text-sm font-semibold">{label}</div>
@@ -99,23 +173,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Experience banner */}
-      <section className="bg-viking-black py-10 px-4 border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-xl overflow-hidden">
-          {[
-            { num: "50", label: "Years — Michael Ashton" },
-            { num: "45+", label: "Years — Joe Keith Martin" },
-            { num: "2008", label: "Founded, Odessa TX" },
-            { num: "100+", label: "Combined Industry Years" },
-          ].map(({ num, label }) => (
-            <div key={label} className="bg-viking-black flex flex-col items-center justify-center py-8 px-4 text-center">
-              <span className="text-4xl sm:text-5xl font-black text-viking-accent leading-none tracking-tight">{num}</span>
-              <span className="text-white/50 text-xs font-semibold mt-2 uppercase tracking-wider">{label}</span>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -135,16 +192,6 @@ export default function AboutPage() {
               <TeamMember key={member.name} {...member} />
             ))}
           </div>
-          {/* Group photo */}
-          <div className="mt-12 relative h-72 sm:h-96 rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/TiffanyWilsohPhotography--9.webp"
-              alt="Viking Inc. leadership team"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-          </div>
         </div>
       </section>
 
@@ -152,7 +199,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-white border-b border-viking-border">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden">
+            <div className="relative h-72 sm:h-96 rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/images/Gaupo3.webp"
                 alt="Viking Inc. tank battery installation — aerial view"

@@ -15,8 +15,8 @@ export default function ContactPage() {
       <PageHero
         headline="Contact Us"
         subhead="We respond fast. Call for immediate assistance or fill out the form below."
-        imageSrc="/images/TiffanyWilsohPhotography--8.webp"
-        imageAlt="Viking Inc. leadership team"
+        imageSrc="/images/Bruce1.webp"
+        imageAlt="Viking Inc. tank battery installation on location"
       />
 
       <section className="py-16 px-4 bg-white">
@@ -49,7 +49,7 @@ export default function ContactPage() {
                 <h2 className="text-xl font-black text-viking-black">Office</h2>
                 <ul className="space-y-3 text-viking-gray text-sm">
                   <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-viking-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg className="w-5 h-5 text-viking-steel shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     <span>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-viking-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg className="w-5 h-5 text-viking-steel shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>

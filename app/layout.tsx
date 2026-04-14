@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${barlow.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-[family-name:var(--font-barlow)]">
+      <body className="min-h-full flex flex-col font-[family-name:var(--font-barlow)]" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

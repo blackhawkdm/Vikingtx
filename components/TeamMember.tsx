@@ -69,7 +69,7 @@ export default function TeamMember({ name, title, bio, imageSrc, yearsExp }: Tea
             <h3 className="font-black text-white text-xl tracking-tight mb-1">{name}</h3>
             <p className="text-viking-accent text-sm font-bold mb-5 uppercase tracking-wide">{title}</p>
             {yearsExp && (
-              <p className="text-viking-accent/80 text-xs font-semibold uppercase tracking-widest mb-4">{yearsExp}</p>
+              <p className="text-viking-steel text-xs font-semibold uppercase tracking-widest mb-4">{yearsExp}</p>
             )}
             <p className="text-white/75 text-sm leading-relaxed">{bio}</p>
           </div>

@@ -31,10 +31,18 @@ const productCategories = [
   {
     title: "Specialty Vessels",
     description:
-      "Knock drums, gas scrubbers, data center cooling vessels, and custom-purpose pressure vessels for unique applications.",
+      "Knock drums, gas scrubbers, and custom-purpose pressure vessels for unique applications.",
     href: "/products#specialty-vessels",
     imageSrc: "/images/Drago1.webp",
     imageAlt: "Viking Inc. large specialty vessels being delivered on site",
+  },
+  {
+    title: "AI Data Center Cooling",
+    description:
+      "ASME code pressure vessels engineered for high-density compute cooling infrastructure. Custom sizing, fast turnaround.",
+    href: "/products#data-center-cooling",
+    imageSrc: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "AI data center server infrastructure",
   },
 ];
 

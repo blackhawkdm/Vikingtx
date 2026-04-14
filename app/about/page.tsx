@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 
 const team = [
   {
-    name: "Joe Keith Martin",
-    title: "Operations Manager",
-    bio: "Joe Keith brings over 45 years of experience in engineering, design, and sales to Viking. His deep technical knowledge and field expertise ensure every project is spec'd and executed right the first time.",
-    imageSrc: "/images/TiffanyWilsohPhotography--4.webp",
-    yearsExp: "45+ Years Experience",
-  },
-  {
     name: "Michael Ashton",
     title: "President",
     bio: "Michael founded Viking Inc. in 2008 and brings 50 years of experience in the oil industry. His leadership has shaped Viking into a trusted manufacturer known for quality products and on-time delivery.",
     imageSrc: "/images/TiffanyWilsohPhotography-.webp",
     yearsExp: "50 Years Experience",
+  },
+  {
+    name: "Joe Keith Martin",
+    title: "Operations Manager",
+    bio: "Joe Keith brings over 45 years of experience in engineering, design, and sales to Viking. His deep technical knowledge and field expertise ensure every project is spec'd and executed right the first time.",
+    imageSrc: "/images/TiffanyWilsohPhotography--4.webp",
+    yearsExp: "45+ Years Experience",
   },
   {
     name: "Taylor Grimes",
@@ -158,16 +158,16 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: "2008", label: "Founded" },
-                { stat: "40,000 sq ft", label: "Production Facility" },
-                { stat: "ASME Certified", label: "Code Manufacturer" },
-                { stat: "R-Stamp", label: "Repair Qualified" },
-              ].map(({ stat, label }) => (
+                { stat: "2008", label: "Founded", color: "text-viking-steel" },
+                { stat: "40,000 sq ft", label: "Production Facility", color: "text-viking-steel" },
+                { stat: "ASME Certified", label: "Code Manufacturer", color: "text-viking-accent" },
+                { stat: "R-Stamp", label: "Repair Qualified", color: "text-viking-accent" },
+              ].map(({ stat, label, color }) => (
                 <div
                   key={label}
                   className="card-hover bg-viking-light rounded-xl p-6 border border-viking-border text-center"
                 >
-                  <div className="text-2xl font-black text-viking-accent mb-1">{stat}</div>
+                  <div className={`text-2xl font-black mb-1 ${color}`}>{stat}</div>
                   <div className="text-viking-gray text-sm font-semibold">{label}</div>
                 </div>
               ))}

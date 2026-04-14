@@ -6,6 +6,7 @@ interface PageHeroProps {
   subhead: string;
   imageSrc: string;
   imageAlt: string;
+  imageFit?: "cover" | "contain";
 }
 
 export default function PageHero({
@@ -14,9 +15,10 @@ export default function PageHero({
   subhead,
   imageSrc,
   imageAlt,
+  imageFit = "cover",
 }: PageHeroProps) {
   return (
-    <section className="relative bg-viking-black overflow-hidden min-h-[380px] flex">
+    <section className="relative bg-viking-black overflow-hidden min-h-[480px] flex">
       <div className="relative z-10 flex flex-col lg:flex-row w-full">
 
         {/* Left — text */}
@@ -33,14 +35,14 @@ export default function PageHero({
         </div>
 
         {/* Right — image with diagonal clip */}
-        <div className="hidden lg:block relative w-[45%] min-h-[380px]">
+        <div className="hidden lg:block relative w-[45%] min-h-[480px]">
           <div className="clip-diagonal absolute inset-0">
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
               priority
-              className="object-cover"
+              className="object-cover object-top"
               sizes="45vw"
             />
             <div className="absolute inset-0 bg-viking-black/25" />
@@ -48,12 +50,12 @@ export default function PageHero({
         </div>
 
         {/* Mobile image strip */}
-        <div className="lg:hidden relative h-48 w-full" aria-hidden="true">
+        <div className="lg:hidden relative h-56 w-full" aria-hidden="true">
           <Image
             src={imageSrc}
             alt=""
             fill
-            className="object-cover opacity-30"
+            className="object-cover object-top opacity-30"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-viking-black/80 to-transparent" />

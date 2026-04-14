@@ -12,11 +12,11 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-3">
               <Image
-                src="/images/viking-logo.png"
+                src="/images/main-logo.png"
                 alt="Viking Inc."
-                width={140}
-                height={108}
-                className="h-14 w-auto invert"
+                width={160}
+                height={116}
+                className="h-16 w-auto bg-white px-3 py-2"
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
@@ -33,15 +33,13 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-4">Pages</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-viking-accent mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {[
-                { href: "/", label: "Home" },
                 { href: "/products", label: "Products" },
                 { href: "/services", label: "Services" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },
-                { href: "/privacy-policy", label: "Privacy Policy" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -57,7 +55,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-4">Contact</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-viking-accent mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-white/60">
               <li>
                 <a
@@ -92,7 +90,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+        <div className="border-t border-viking-steel/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <p>&copy; {currentYear} Viking Inc. All rights reserved.</p>
           <Link href="/privacy-policy" className="hover:text-white/70 transition-colors">
             Privacy Policy

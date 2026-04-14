@@ -36,10 +36,10 @@ export default function HeroBanner({
               </svg>
               ASME Certified
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/15 text-white/60 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 bg-viking-steel/15 border border-viking-steel/35 text-viking-steel-light text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
               National Board Registered
             </span>
-            <span className="inline-flex items-center gap-1.5 bg-white/5 border border-white/15 text-white/60 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 bg-viking-steel/15 border border-viking-steel/35 text-viking-steel-light text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
               R-Stamp Qualified
             </span>
           </div>

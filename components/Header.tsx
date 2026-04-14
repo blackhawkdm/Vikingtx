@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
@@ -28,11 +27,11 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           >
             <Image
-              src="/images/viking-logo.png"
+              src="/images/main-logo.png"
               alt="Viking Inc."
-              width={120}
-              height={93}
-              className="h-10 w-auto invert"
+              width={140}
+              height={101}
+              className="h-12 w-auto bg-white px-2 py-1"
               priority
             />
           </Link>

@@ -104,7 +104,7 @@ export default function HomePage() {
               Custom-manufactured vessels and tanks for the oil and gas industry.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {productCategories.map((product) => (
               <ProductCard key={product.title} {...product} />
             ))}

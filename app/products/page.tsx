@@ -16,7 +16,9 @@ const products = [
     num: "01",
     title: "Heater Treaters",
     tagline: "Vertical or horizontal. Code or non-code.",
-    caps: ["Code / Non-Code", "Vertical / Horizontal", "Internal Coating", "Valves & Accessories"],
+    description:
+      "Vertical and horizontal configurations built in-house at our Odessa facility. Code and non-code available. Each unit is designed to your application — available with internal coating, custom valve packages, and a full accessory lineup.",
+    caps: ["Code / Non-Code", "Vertical / Horizontal", "Internal Coating", "Custom Design", "Valves & Accessories"],
     imageSrc: "/images/Gaupo5.webp",
     imageAlt: "Viking heater treaters in service",
   },
@@ -25,7 +27,9 @@ const products = [
     num: "02",
     title: "Separators",
     tagline: "2-phase and 3-phase. Built to your application.",
-    caps: ["2-Phase / 3-Phase", "Pneumatic or Mechanical", "Internal Coating", "Custom Designed"],
+    description:
+      "Two-phase and three-phase separation in vertical or horizontal configurations. Pneumatic or mechanical level controllers. Fully custom-designed internals with internal coating available.",
+    caps: ["2-Phase / 3-Phase", "Vertical / Horizontal", "Pneumatic or Mechanical", "Internal Coating", "Custom Designed"],
     imageSrc: "/images/Gaupo7.webp",
     imageAlt: "Viking separator vessels",
   },
@@ -34,7 +38,9 @@ const products = [
     num: "03",
     title: "Free Water Knockouts",
     tagline: "A/B/C style. Code and non-code.",
-    caps: ["A/B/C Style", "Code / Non-Code", "Internal Coating", "Valves & Accessories"],
+    description:
+      "A/B/C style designs for effective free water removal. Code and non-code builds available. Internal coating and custom nozzle configurations on request. Valves and accessories included.",
+    caps: ["A/B/C Style", "Code / Non-Code", "Internal Coating", "Custom Nozzle Config", "Valves & Accessories"],
     imageSrc: "/images/Gaupo2.webp",
     imageAlt: "Viking vessels on location",
   },
@@ -43,6 +49,8 @@ const products = [
     num: "04",
     title: "Vapor Recovery Towers",
     tagline: "External piping installed. In-house.",
+    description:
+      "Engineered for vapor recovery with external piping installed at our facility — no field assembly required. Internal coating available. Reduces emissions and captures value from produced vapors.",
     caps: ["External Piping Installed", "Internal Coating", "Code / Non-Code", "Custom Design"],
     imageSrc: "/images/Gaupo4.webp",
     imageAlt: "Viking tank battery with vapor recovery",
@@ -52,7 +60,9 @@ const products = [
     num: "05",
     title: "Specialty Pressure Vessels",
     tagline: "Knock drums, scrubbers, cooling vessels.",
-    caps: ["Knock Drums", "Gas Scrubbers", "Data Center Cooling", "Custom-Purpose"],
+    description:
+      "Knock drums, gas scrubbers, AI data center cooling vessels, and custom-purpose pressure vessels for unique applications. Contact us with your specific requirement — our team assists with engineering and sizing.",
+    caps: ["Knock Drums", "Gas Scrubbers", "Data Center Cooling", "Custom-Purpose", "Engineer-Assisted Sizing"],
     imageSrc: "/images/Drago1.webp",
     imageAlt: "Viking large specialty vessels",
   },
@@ -61,22 +71,26 @@ const products = [
     num: "06",
     title: "API Storage Tanks",
     tagline: "Built to API standards. Full customization.",
-    caps: ["Coupling / Flange / Grooved", "8oz or 16oz on 15'6\" Dia.", "Cleanout Doors", "Internal Coating"],
+    description:
+      "Built to API standards with full customization. Standard and non-standard configurations available. Options include walkways, stairways, one or two-piece cleanout doors, downcomers, roll lines, and internal coating.",
+    caps: ["Coupling / Flange / Grooved", "8oz or 16oz on 15'6\" Dia.", "One or Two-Piece Cleanout Doors", "Walkways & Stairways", "Internal Coating"],
     imageSrc: "/images/Gaupo3.webp",
     imageAlt: "Viking API storage tank battery aerial view",
   },
   {
     id: "data-center-cooling",
     num: "07",
-    title: "AI Data Center Cooling Vessels",
+    title: "AI Data Center Cooling",
     tagline: "Purpose-built for high-density compute cooling.",
+    description:
+      "ASME code pressure vessels engineered specifically for high-density compute cooling infrastructure. Custom sizing, high-pressure rated, fast turnaround. Built and delivered from our Odessa facility.",
     caps: ["ASME Code Certified", "Custom Sizing", "High-Pressure Rated", "Internal Coating", "Fast Turnaround"],
     imageSrc: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "AI data center server infrastructure",
   },
 ];
 
-export default function ProductsPage() {
+export default function ProductsV1Page() {
   return (
     <>
       <PageHero
@@ -102,72 +116,76 @@ export default function ProductsPage() {
         </div>
       </nav>
 
-      {/* Product grid — 2 columns, uniform height */}
-      <section className="py-10 px-4 bg-viking-light">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {products.map((p) => (
-              <div
-                key={p.id}
-                id={p.id}
-                className="scroll-mt-32 group relative overflow-hidden rounded-xl h-[360px]"
-              >
-                {/* Image */}
-                <Image
-                  src={p.imageSrc}
-                  alt={p.imageAlt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                />
+      {/* Product sections — services-style alternating cards */}
+      <div className="py-12 px-4 bg-viking-light space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          {products.map((p, i) => (
+            <section
+              key={p.id}
+              id={p.id}
+              className="scroll-mt-32 rounded-xl overflow-hidden shadow-sm border border-viking-border bg-white"
+            >
+              <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
 
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-viking-black/90 via-viking-black/25 to-transparent" />
-
-                {/* Accent bar — slides in on hover */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-viking-accent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-
-                {/* Number — top left */}
-                <div className="absolute top-5 left-5 text-[11px] font-black text-white/30 tracking-widest uppercase">
-                  {p.num}
+                {/* Image panel */}
+                <div className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-[420px] overflow-hidden">
+                  <Image
+                    src={p.imageSrc}
+                    alt={p.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-viking-black/25" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-viking-accent" />
+                  <div className="absolute bottom-6 right-6 text-[100px] font-black text-white/10 leading-none select-none pointer-events-none">
+                    {p.num}
+                  </div>
+                  <div className="absolute top-6 left-6">
+                    <span className="inline-block bg-black/50 backdrop-blur-sm text-white/80 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                      {p.tagline}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Content — bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h2 className="text-xl font-black text-white tracking-tight mb-1">
+                {/* Content panel */}
+                <div className="w-full lg:w-1/2 px-8 sm:px-12 py-12 lg:py-14 flex flex-col justify-center">
+                  <p className="text-viking-steel text-xs font-black uppercase tracking-widest mb-3">
+                    {p.num}
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-black text-viking-black tracking-tight mb-4">
                     {p.title}
                   </h2>
-                  <p className="text-white/50 text-[11px] mb-3 uppercase tracking-widest font-semibold">
-                    {p.tagline}
+                  <p className="text-viking-gray leading-relaxed mb-6 text-sm sm:text-base">
+                    {p.description}
                   </p>
-
-                  {/* Capability chips */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {p.caps.map((cap) => (
                       <span
                         key={cap}
-                        className="inline-block bg-white/10 border border-white/15 text-white/75 text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                        className="inline-flex items-center gap-1.5 bg-viking-steel-light border border-viking-steel/20 text-viking-gray text-xs font-semibold px-3 py-1.5 rounded-full"
                       >
+                        <span className="w-1.5 h-1.5 rounded-full bg-viking-accent flex-shrink-0" />
                         {cap}
                       </span>
                     ))}
                   </div>
-
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1.5 text-viking-accent text-[11px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="inline-flex items-center gap-2 text-viking-accent font-bold text-sm hover:text-viking-accent-dark transition-colors group w-fit"
                   >
                     Request a Quote
-                    <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
                 </div>
+
               </div>
-            ))}
-          </div>
+            </section>
+          ))}
         </div>
-      </section>
+      </div>
 
       <CTABanner
         heading="We can assist you in sizing your equipment needs."

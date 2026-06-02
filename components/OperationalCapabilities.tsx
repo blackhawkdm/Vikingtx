@@ -72,12 +72,12 @@ export default function OperationalCapabilities() {
 
           {/* Right — diagonal facility image (desktop); bleeds to the section's right edge */}
           <div className="relative hidden min-h-[480px] self-stretch lg:block lg:flex-1 lg:[margin-right:calc(var(--spacing-gutter-lg)*-1)] xl:[margin-right:calc(var(--spacing-gutter-xl)*-1)]">
-            <div className="clip-diagonal absolute inset-0">
+            <div className="clip-diagonal absolute inset-0 overflow-hidden">
               <Image
-                src="/images/Drago3.webp"
-                alt="Aerial view of a Viking crane setting storage tanks on-site"
+                src="/images/facility-aerial.webp"
+                alt="Aerial view of the Viking manufacturing facility in Odessa, Texas"
                 fill
-                className="object-cover object-center"
+                className="rotate-[9.79deg] scale-[1.3] object-cover object-center"
                 sizes="45vw"
               />
             </div>
@@ -88,10 +88,10 @@ export default function OperationalCapabilities() {
       {/* Mobile image strip */}
       <div className="relative mt-10 h-56 w-full lg:hidden">
         <Image
-          src="/images/Drago3.webp"
-          alt="Aerial view of a Viking crane setting storage tanks on-site"
+          src="/images/facility-aerial.webp"
+          alt="Aerial view of the Viking manufacturing facility in Odessa, Texas"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
       </div>

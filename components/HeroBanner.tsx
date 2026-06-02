@@ -49,7 +49,7 @@ export default function HeroBanner({
 
       {/* Left-aligned content — Figma: 114px inset @ 1440px */}
       <div className="relative z-10 flex flex-1 flex-col justify-center py-16 sm:py-20 lg:py-[86px]">
-        <div className="hero-container">
+        <div className="site-container">
           <div className="flex w-full max-w-3xl flex-col gap-7">
           {/* Badge row */}
           <div className="animate-fade-up flex flex-wrap items-center gap-2">
@@ -116,7 +116,7 @@ export default function HeroBanner({
 
       {/* Stats bar — Figma: 144px side gutters @ 1440px */}
       <div className="hero-stat-bar relative z-10 border-t border-white/10">
-        <div className="hero-stat-container grid grid-cols-2 lg:grid-cols-4">
+        <div className="site-container grid grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={s.label}

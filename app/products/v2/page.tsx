@@ -154,8 +154,8 @@ export default function ProductsV2Page() {
       />
 
       {/* Masonry — 3 explicit columns, cards manually assigned so columns balance */}
-      <section className="py-10 px-4 bg-viking-light">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-viking-light py-10">
+        <div className="site-container">
           <div className="flex flex-col lg:flex-row gap-4 items-start">
 
             {/* Col 1: 01 (500) + 04 (490) = ~1006 */}
@@ -188,8 +188,8 @@ export default function ProductsV2Page() {
         subtext="Contact our team and we'll help you spec the right vessel for your application."
       />
 
-      <section className="py-10 px-4 bg-viking-light border-t border-viking-border">
-        <div className="max-w-4xl mx-auto">
+      <section className="border-t border-viking-border bg-viking-light py-10">
+        <div className="site-container max-w-4xl">
           <p className="text-viking-gray text-xs leading-relaxed">
             The information and illustrations depicted on this site represent the basic operations
             of the equipment produced by Viking Inc. for the oil and gas industry. We accept no

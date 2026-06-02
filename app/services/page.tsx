@@ -79,8 +79,8 @@ export default function ServicesPage() {
       />
 
       {/* Service sections — alternating image / content */}
-      <div className="py-12 px-4 bg-viking-light space-y-6">
-        <div className="max-w-7xl mx-auto space-y-6">
+      <div className="space-y-6 bg-viking-light py-12">
+        <div className="site-container space-y-6">
       {services.map((svc, i) => (
         <section
           key={svc.id}
@@ -155,8 +155,8 @@ export default function ServicesPage() {
       </div>
 
       {/* Certifications — dark strip */}
-      <section id="certifications" className="bg-viking-black py-14 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section id="certifications" className="bg-viking-black py-14">
+        <div className="site-container">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               Certifications &amp; Standards

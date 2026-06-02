@@ -23,8 +23,8 @@ export default function ServiceBlock({
   reverse = false,
 }: ServiceBlockProps) {
   return (
-    <section id={id} className="py-14 px-4 border-b border-viking-border scroll-mt-20">
-      <div className="max-w-7xl mx-auto">
+    <section id={id} className="scroll-mt-20 border-b border-viking-border py-14">
+      <div className="site-container">
         <div
           className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-10 items-center`}
         >

@@ -102,7 +102,7 @@ export default function ProductsV1Page() {
 
       {/* Sticky anchor nav */}
       <nav className="bg-white border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow-sm" aria-label="Products navigation">
-        <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 py-0 min-w-max">
+        <div className="site-container flex min-w-max items-center gap-0 py-0">
           {products.map(({ id, num, title }) => (
             <a
               key={id}
@@ -117,8 +117,8 @@ export default function ProductsV1Page() {
       </nav>
 
       {/* Product sections — services-style alternating cards */}
-      <div className="py-12 px-4 bg-viking-light space-y-6">
-        <div className="max-w-7xl mx-auto space-y-6">
+      <div className="space-y-6 bg-viking-light py-12">
+        <div className="site-container space-y-6">
           {products.map((p, i) => (
             <section
               key={p.id}
@@ -192,8 +192,8 @@ export default function ProductsV1Page() {
         subtext="Contact our team and we'll help you spec the right vessel for your application."
       />
 
-      <section className="py-10 px-4 bg-viking-light border-t border-viking-border">
-        <div className="max-w-4xl mx-auto">
+      <section className="border-t border-viking-border bg-viking-light py-10">
+        <div className="site-container max-w-4xl">
           <p className="text-viking-gray text-xs leading-relaxed">
             The information and illustrations depicted on this site represent the basic operations
             of the equipment produced by Viking Inc. for the oil and gas industry. We accept no

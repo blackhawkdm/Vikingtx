@@ -85,8 +85,8 @@ export default function HomeV2Page() {
       />
 
       {/* Product Category Grid */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white py-16">
+        <div className="site-container">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-viking-black tracking-tight">
               What We Build
@@ -116,7 +116,7 @@ export default function HomeV2Page() {
 
       {/* Services — dark horizontal row strip */}
       <section className="bg-viking-black border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div className="site-container flex flex-col gap-3 pt-12 pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">What We Do</h2>
             <p className="text-white/50 mt-1 text-sm">Manufacturing is one part. We also coat, haul, and set.</p>
@@ -133,10 +133,11 @@ export default function HomeV2Page() {
           <Link
             key={svc.num}
             href={svc.href}
-            className={`group flex items-stretch border-t border-white/8 ${i === services.length - 1 ? "border-b border-white/8" : ""}`}
+            className={`group block border-t border-white/8 ${i === services.length - 1 ? "border-b border-white/8" : ""}`}
           >
+            <div className="site-container flex items-stretch">
             {/* Text side */}
-            <div className="flex items-center gap-6 px-6 lg:px-8 py-8 w-full lg:w-1/2 flex-shrink-0">
+            <div className="flex w-full flex-shrink-0 items-center gap-6 py-8 lg:w-1/2">
               <span className="text-6xl font-black text-white/8 group-hover:text-viking-accent/20 transition-colors duration-500 leading-none flex-shrink-0 select-none">
                 {svc.num}
               </span>
@@ -166,6 +167,7 @@ export default function HomeV2Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-viking-black via-viking-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-viking-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </div>
             </div>
           </Link>
         ))}

@@ -39,10 +39,10 @@ export default function AboutPage() {
     <>
       {/* ── Hero — group photo split ── */}
       <section className="relative bg-viking-black overflow-hidden min-h-[480px] flex flex-col">
-        <div className="relative z-10 flex flex-col lg:flex-row flex-1">
+        <div className="site-container relative z-10 flex flex-1 flex-col lg:flex-row">
 
           {/* Left content */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:py-20 w-full lg:w-[52%]">
+          <div className="flex w-full flex-col justify-center py-16 lg:w-[52%] lg:py-20">
             <p className="animate-fade-up text-viking-accent text-xs font-bold uppercase tracking-widest mb-4">
               Viking Inc. — Odessa, Texas
             </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
         {/* Stats bar */}
         <div className="relative z-10 border-t border-white/10 bg-white/[0.04]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="site-container">
             <div className="grid grid-cols-2 lg:grid-cols-4">
               {[
                 { value: "50", label: "Years — Michael Ashton" },
@@ -129,8 +129,8 @@ export default function AboutPage() {
       </section>
 
       {/* Company Overview */}
-      <section className="py-16 px-4 bg-white border-b border-viking-border">
-        <div className="max-w-7xl mx-auto">
+      <section className="border-b border-viking-border bg-white py-16">
+        <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-black text-viking-black tracking-tight mb-4">
@@ -177,8 +177,8 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16 px-4 bg-viking-light border-b border-viking-border">
-        <div className="max-w-7xl mx-auto">
+      <section className="border-b border-viking-border bg-viking-light py-16">
+        <div className="site-container">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black text-viking-black tracking-tight">
               Leadership Team
@@ -196,8 +196,8 @@ export default function AboutPage() {
       </section>
 
       {/* Facility */}
-      <section className="py-16 px-4 bg-white border-b border-viking-border">
-        <div className="max-w-7xl mx-auto">
+      <section className="border-b border-viking-border bg-white py-16">
+        <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-72 sm:h-96 rounded-xl overflow-hidden shadow-md">
               <Image

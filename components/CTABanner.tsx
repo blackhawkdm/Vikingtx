@@ -10,8 +10,9 @@ export default function CTABanner({
   subtext,
 }: CTABannerProps) {
   return (
-    <section className="bg-viking-accent py-12 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="bg-viking-accent py-12">
+      <div className="site-container">
+        <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2">{heading}</h2>
         {subtext && <p className="text-white/80 text-lg mb-6">{subtext}</p>}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
@@ -30,6 +31,7 @@ export default function CTABanner({
           >
             Request a Quote
           </Link>
+        </div>
         </div>
       </div>
     </section>

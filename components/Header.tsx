@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-viking-light shadow-[0_4px_3px_rgba(0,0,0,0.1),0_2px_2px_rgba(0,0,0,0.1)]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-[60px]">
+      <div className="site-container">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link

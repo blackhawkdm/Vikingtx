@@ -18,11 +18,11 @@ export default function PageHero({
   imageFit = "cover",
 }: PageHeroProps) {
   return (
-    <section className="relative bg-viking-black overflow-hidden min-h-[480px] flex">
-      <div className="relative z-10 flex flex-col lg:flex-row w-full">
+    <section className="relative flex min-h-[480px] overflow-hidden bg-viking-black">
+      <div className="site-container relative z-10 flex w-full flex-col lg:flex-row">
 
         {/* Left — text */}
-        <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-14 lg:py-16 w-full lg:w-[55%]">
+        <div className="flex w-full flex-col justify-center py-14 lg:w-[55%] lg:py-16">
           <p className="animate-fade-up text-viking-accent text-xs font-bold uppercase tracking-widest mb-3">
             {eyebrow}
           </p>

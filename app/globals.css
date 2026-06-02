@@ -6,12 +6,19 @@
   --color-viking-gray: #4a4a4a;
   --color-viking-light: #f5f5f5;
   --color-viking-border: #e5e5e5;
-  --color-viking-accent: #4a86e8;
-  --color-viking-accent-dark: #3a72d4;
+  --color-viking-accent: #b84e27;
+  --color-viking-accent-dark: #9a421f;
+  --color-viking-grey: #21282f;
+  --color-viking-overlay: #424345;
   --color-viking-steel: #6b87a8;
   --color-viking-steel-light: #dce6f0;
   --color-viking-teal: #0f766e;
   --color-viking-white: #ffffff;
+
+  /* Layout — Figma 1440px artboard */
+  --spacing-page-x: 3.75rem; /* 60px header */
+  --spacing-hero-x: 7.125rem; /* 114px hero content */
+  --spacing-hero-stat-x: 9rem; /* 144px stat bar column start */
 
   /* Typography */
   --font-heading: var(--font-barlow), sans-serif;
@@ -74,6 +81,70 @@ body {
 
 .animate-fade-up-delay-3 {
   animation: fadeUp 0.6s ease-out 0.35s both;
+}
+
+/* ── Hero (Figma) — explicit tokens so layout/colors don’t depend on stale utilities ── */
+.hero-media-overlay {
+  background-color: rgb(66 67 69 / 0.5);
+}
+
+.hero-stat-bar {
+  background-color: var(--color-viking-grey);
+}
+
+.hero-stat-value {
+  color: var(--color-viking-accent);
+}
+
+/* Figma-aligned horizontal gutters (1440px frame) */
+.hero-container {
+  width: 100%;
+  max-width: 90rem; /* 1440px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .hero-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-container {
+    padding-inline: var(--spacing-page-x);
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero-container {
+    padding-inline: var(--spacing-hero-x);
+  }
+}
+
+.hero-stat-container {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .hero-stat-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hero-stat-container {
+    padding-inline: var(--spacing-page-x);
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero-stat-container {
+    padding-inline: var(--spacing-hero-stat-x);
+  }
 }
 
 /* ── Diagonal clip for hero image panel ── */

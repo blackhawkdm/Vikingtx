@@ -78,8 +78,8 @@ export default function HomeV2Page() {
   return (
     <>
       <HeroBanner
-        headline="Precision-Built. Field-Ready."
-        subhead="ASME Code certified pressure vessel and API tank manufacturer. Odessa, Texas."
+        headline="Precision Engineered. Field-Ready Performance."
+        subhead="We provide code-compliant pressure vessels and storage solutions for high-stakes environments. Built with 50 years of industry experience and zero compromise on safety."
         imageSrc="/images/Gaupo1.webp"
         imageAlt="Viking Inc. tank battery installation in the Permian Basin"
       />

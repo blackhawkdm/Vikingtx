@@ -30,7 +30,7 @@ export default function HomePage() {
       <CertBadges />
 
       {/* CTA Banner */}
-      <CTABanner heading="Need sizing help? Our team can assist." />
+      <CTABanner heading="Optimize your production with expert sizing and technical support." />
     </>
   );
 }

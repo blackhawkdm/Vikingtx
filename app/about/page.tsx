@@ -240,7 +240,7 @@ export default function AboutPage() {
 
       <CertBadges />
 
-      <CTABanner heading="Ready to work with Viking?" />
+      <CTABanner heading="Bring Viking's technical authority to your next project." />
     </>
   );
 }

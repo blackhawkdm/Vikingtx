@@ -7,10 +7,9 @@ interface TeamMemberProps {
   title: string;
   bio: string;
   imageSrc?: string;
-  yearsExp?: string;
 }
 
-export default function TeamMember({ name, title, bio, imageSrc, yearsExp }: TeamMemberProps) {
+export default function TeamMember({ name, title, bio, imageSrc }: TeamMemberProps) {
   return (
     <div
       className="flip-card group relative h-[420px] rounded-xl overflow-visible cursor-pointer focus-within:outline-none"
@@ -44,33 +43,17 @@ export default function TeamMember({ name, title, bio, imageSrc, yearsExp }: Tea
           {/* Gradient overlay + name */}
           <div className="absolute inset-0 bg-gradient-to-t from-viking-black via-viking-black/20 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5">
-            {yearsExp && (
-              <span className="inline-block bg-viking-accent text-white text-xs font-bold px-2.5 py-1 rounded-full mb-2 uppercase tracking-wide">
-                {yearsExp}
-              </span>
-            )}
-            <h3 className="font-black text-white text-lg tracking-tight leading-tight">{name}</h3>
+            <h3 className="font-extrabold text-white text-lg tracking-tight leading-tight">{name}</h3>
             <p className="text-viking-accent text-sm font-semibold">{title}</p>
-          </div>
-
-          {/* Flip hint */}
-          <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm text-white/70 text-[10px] font-semibold px-2 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 4v8m0 0l4-4m-4 4l-4-4" />
-            </svg>
-            Hover
           </div>
         </div>
 
         {/* ── BACK ── */}
-        <div className="flip-card-face flip-card-back absolute inset-0 rounded-xl overflow-hidden bg-viking-black shadow-xl flex flex-col justify-between p-7">
+        <div className="flip-card-face flip-card-back absolute inset-0 rounded-xl overflow-hidden bg-viking-grey shadow-xl flex flex-col justify-between p-7">
           <div>
-            <div className="w-10 h-1 bg-viking-accent rounded-full mb-5" />
-            <h3 className="font-black text-white text-xl tracking-tight mb-1">{name}</h3>
+            <div className="w-full h-1 bg-viking-accent rounded-full mb-5" />
+            <h3 className="font-extrabold text-white text-xl tracking-tight mb-1.5">{name}</h3>
             <p className="text-viking-accent text-sm font-bold mb-5 uppercase tracking-wide">{title}</p>
-            {yearsExp && (
-              <p className="text-viking-steel text-xs font-semibold uppercase tracking-widest mb-4">{yearsExp}</p>
-            )}
             <p className="text-white/75 text-sm leading-relaxed">{bio}</p>
           </div>
           <div className="flex flex-col gap-2 mt-6">

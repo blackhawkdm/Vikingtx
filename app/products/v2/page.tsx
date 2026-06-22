@@ -84,7 +84,7 @@ const products = [
     description:
       "Built to API standards with full customization. Options include walkways, stairways, cleanout doors, downcomers, roll lines, and internal coating.",
     caps: ["Coupling / Flange / Grooved", "8oz or 16oz on 15'6\" Dia.", "Cleanout Doors", "Internal Coating"],
-    imageSrc: "/images/Gaupo3.webp",
+    imageSrc: "/images/tank-battery-aerial.webp",
     imageAlt: "Viking API storage tank battery aerial view",
     height: "h-[500px]",
   },
@@ -96,7 +96,7 @@ const products = [
     description:
       "ASME code vessels engineered for high-density compute cooling infrastructure. Custom sizing, high-pressure rated, fast turnaround from our Odessa facility.",
     caps: ["ASME Code Certified", "Custom Sizing", "High-Pressure Rated", "Internal Coating"],
-    imageSrc: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    imageSrc: "/images/data-center-cooling.webp",
     imageAlt: "AI data center server infrastructure",
     height: "h-[400px]",
   },
@@ -149,7 +149,7 @@ export default function ProductsV2Page() {
       <PageHero
         headline="Products"
         subhead="Custom-built vessels and tanks. Every unit built to your spec — code or non-code, standard or fully custom."
-        imageSrc="/images/Gaupo3.webp"
+        imageSrc="/images/tank-battery-aerial.webp"
         imageAlt="Viking Inc. API storage tank battery — aerial view"
       />
 

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
-import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Oilfield Pressure Vessels & Storage Tanks",
@@ -17,10 +16,10 @@ const products = [
     title: "Heater Treaters",
     tagline: "Vertical or horizontal. Code or non-code.",
     description:
-      "Vertical and horizontal configurations built in-house at our Odessa facility. Code and non-code available. Each unit is designed to your application — available with internal coating, custom valve packages, and a full accessory lineup.",
+      "Manufactured in-house at our Odessa facility to specific crude oil treating requirements. Available in vertical or horizontal configurations with custom valve packages and specialized internal coatings.",
     caps: ["Code / Non-Code", "Vertical / Horizontal", "Internal Coating", "Custom Design", "Valves & Accessories"],
-    imageSrc: "/images/Gaupo5.webp",
-    imageAlt: "Viking heater treaters in service",
+    imageSrc: "/images/treater-1.webp",
+    imageAlt: "Viking heater treater vessel built at the Odessa facility",
   },
   {
     id: "separators",
@@ -28,10 +27,10 @@ const products = [
     title: "Separators",
     tagline: "2-phase and 3-phase. Built to your application.",
     description:
-      "Two-phase and three-phase separation in vertical or horizontal configurations. Pneumatic or mechanical level controllers. Fully custom-designed internals with internal coating available.",
+      "High and low-pressure separation units designed for reliable liquid and gas measurement. Fully custom-designed internals with pneumatic or mechanical level controllers.",
     caps: ["2-Phase / 3-Phase", "Vertical / Horizontal", "Pneumatic or Mechanical", "Internal Coating", "Custom Designed"],
-    imageSrc: "/images/Gaupo7.webp",
-    imageAlt: "Viking separator vessels",
+    imageSrc: "/images/separator.webp",
+    imageAlt: "Viking horizontal separator vessels",
   },
   {
     id: "free-water-knockouts",
@@ -39,10 +38,10 @@ const products = [
     title: "Free Water Knockouts",
     tagline: "A/B/C style. Code and non-code.",
     description:
-      "A/B/C style designs for effective free water removal. Code and non-code builds available. Internal coating and custom nozzle configurations on request. Valves and accessories included.",
+      "Engineered for high-volume water removal to reduce the heat load on downstream treating equipment. Available in A, B, or C style designs with custom nozzle configurations.",
     caps: ["A/B/C Style", "Code / Non-Code", "Internal Coating", "Custom Nozzle Config", "Valves & Accessories"],
-    imageSrc: "/images/Gaupo2.webp",
-    imageAlt: "Viking vessels on location",
+    imageSrc: "/images/free-water-knockouts.webp",
+    imageAlt: "Viking free water knockout vessel",
   },
   {
     id: "vapor-recovery-towers",
@@ -50,10 +49,10 @@ const products = [
     title: "Vapor Recovery Towers",
     tagline: "External piping installed. In-house.",
     description:
-      "Engineered for vapor recovery with external piping installed at our facility — no field assembly required. Internal coating available. Reduces emissions and captures value from produced vapors.",
+      "Engineered to capture high-value vapors and maintain zero-emission compliance. Every unit is delivered with external piping pre-installed and pressure-tested at our facility, significantly reducing on-site crane time and assembly costs.",
     caps: ["External Piping Installed", "Internal Coating", "Code / Non-Code", "Custom Design"],
-    imageSrc: "/images/Gaupo4.webp",
-    imageAlt: "Viking tank battery with vapor recovery",
+    imageSrc: "/images/vapor-recovery-towers.webp",
+    imageAlt: "Viking vapor recovery tower with external piping",
   },
   {
     id: "specialty-vessels",
@@ -61,10 +60,10 @@ const products = [
     title: "Specialty Pressure Vessels",
     tagline: "Knock drums, scrubbers, cooling vessels.",
     description:
-      "Knock drums, gas scrubbers, AI data center cooling vessels, and custom-purpose pressure vessels for unique applications. Contact us with your specific requirement — our team assists with engineering and sizing.",
+      "Purpose-built vessels for unique applications, including gas scrubbers and knock drums. Our staff provides engineering and sizing support to meet specific project specifications.",
     caps: ["Knock Drums", "Gas Scrubbers", "Data Center Cooling", "Custom-Purpose", "Engineer-Assisted Sizing"],
-    imageSrc: "/images/Drago1.webp",
-    imageAlt: "Viking large specialty vessels",
+    imageSrc: "/images/specialty-pressure-vessels.webp",
+    imageAlt: "Viking specialty pressure vessels fabrication at the Odessa shop",
   },
   {
     id: "storage-tanks",
@@ -72,10 +71,10 @@ const products = [
     title: "API Storage Tanks",
     tagline: "Built to API standards. Full customization.",
     description:
-      "Built to API standards with full customization. Standard and non-standard configurations available. Options include walkways, stairways, one or two-piece cleanout doors, downcomers, roll lines, and internal coating.",
+      "A full line of oilfield storage tanks and gun barrels manufactured to API 12F specifications. Features include one or two-piece clean out doors, downcomers, and internal coating.",
     caps: ["Coupling / Flange / Grooved", "8oz or 16oz on 15'6\" Dia.", "One or Two-Piece Cleanout Doors", "Walkways & Stairways", "Internal Coating"],
-    imageSrc: "/images/Gaupo3.webp",
-    imageAlt: "Viking API storage tank battery aerial view",
+    imageSrc: "/images/api-storage-tanks.webp",
+    imageAlt: "Viking API 12F storage tanks at the Odessa yard",
   },
   {
     id: "data-center-cooling",
@@ -83,22 +82,50 @@ const products = [
     title: "AI Data Center Cooling",
     tagline: "Purpose-built for high-density compute cooling.",
     description:
-      "ASME code pressure vessels engineered specifically for high-density compute cooling infrastructure. Custom sizing, high-pressure rated, fast turnaround. Built and delivered from our Odessa facility.",
+      "ASME code pressure vessels engineered specifically for high-density compute cooling infrastructure. Custom-sized, high-pressure rated, and delivered with the technical integrity required for critical data center environments.",
     caps: ["ASME Code Certified", "Custom Sizing", "High-Pressure Rated", "Internal Coating", "Fast Turnaround"],
-    imageSrc: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "AI data center server infrastructure",
+    imageSrc: "/images/data-center-cooling.webp",
+    imageAlt: "Data center cooling infrastructure with pressure vessels",
   },
 ];
 
 export default function ProductsV1Page() {
   return (
     <>
-      <PageHero
-        headline="Products"
-        subhead="Custom-built vessels and tanks. Every unit built to your spec — code or non-code, standard or fully custom."
-        imageSrc="/images/Gaupo3.webp"
-        imageAlt="Viking Inc. API storage tank battery — aerial view"
-      />
+      {/* Hero — full-bleed (Figma 323:20418) */}
+      <section
+        className="relative flex min-h-[480px] items-center overflow-hidden bg-viking-black"
+        aria-label="Viking Inc. API storage tank battery — aerial view"
+      >
+        {/* Background image + overlays */}
+        <div className="absolute inset-0" aria-hidden="true">
+          <Image
+            src="/images/tank-battery-aerial.webp"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="hero-media-overlay absolute inset-0" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="site-container relative z-10">
+          <div className="flex max-w-lg flex-col items-start gap-3.5 py-20">
+            <span className="animate-fade-up inline-flex items-center rounded-full border border-viking-accent bg-viking-accent/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              Viking Inc.
+            </span>
+            <h1 className="animate-fade-up-delay-1 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-[60px] lg:leading-[63px] lg:tracking-[-0.02em]">
+              Engineered for Performance
+            </h1>
+            <p className="animate-fade-up-delay-2 max-w-md text-base font-medium leading-relaxed text-white sm:text-lg sm:leading-[29px]">
+              Our comprehensive catalog of custom-built vessels and tanks — code or non-code, standard or fully custom.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Sticky anchor nav */}
       <nav className="bg-white border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow-sm" aria-label="Products navigation">
@@ -116,19 +143,19 @@ export default function ProductsV1Page() {
         </div>
       </nav>
 
-      {/* Product sections — services-style alternating cards */}
-      <div className="space-y-6 bg-viking-light py-12">
+      {/* Product sections — alternating image/text cards (Figma 97:433 / 97:463) */}
+      <div className="bg-viking-light py-12">
         <div className="site-container space-y-6">
           {products.map((p, i) => (
             <section
               key={p.id}
               id={p.id}
-              className="scroll-mt-32 rounded-xl overflow-hidden shadow-sm border border-viking-border bg-white"
+              className="scroll-mt-32 overflow-hidden rounded-xl border border-viking-border bg-white shadow"
             >
               <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
 
                 {/* Image panel */}
-                <div className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-[420px] overflow-hidden">
+                <div className="relative min-h-[300px] w-full overflow-hidden lg:min-h-[440px] lg:w-1/2">
                   <Image
                     src={p.imageSrc}
                     alt={p.imageAlt}
@@ -137,45 +164,39 @@ export default function ProductsV1Page() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-viking-black/25" />
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-viking-accent" />
-                  <div className="absolute bottom-6 right-6 text-[100px] font-black text-white/10 leading-none select-none pointer-events-none">
-                    {p.num}
-                  </div>
-                  <div className="absolute top-6 left-6">
-                    <span className="inline-block bg-black/50 backdrop-blur-sm text-white/80 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-viking-accent" />
+                  <div className="absolute left-6 top-6">
+                    <span className="inline-block rounded-full bg-black/50 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm">
                       {p.tagline}
                     </span>
                   </div>
                 </div>
 
                 {/* Content panel */}
-                <div className="w-full lg:w-1/2 px-8 sm:px-12 py-12 lg:py-14 flex flex-col justify-center">
-                  <p className="text-viking-steel text-xs font-black uppercase tracking-widest mb-3">
-                    {p.num}
-                  </p>
-                  <h2 className="text-2xl sm:text-3xl font-black text-viking-black tracking-tight mb-4">
+                <div className="flex w-full flex-col justify-center gap-6 px-8 py-10 lg:w-1/2 lg:px-12 lg:py-12">
+                  <h2 className="text-2xl font-extrabold tracking-tight text-viking-black lg:text-3xl">
                     {p.title}
                   </h2>
-                  <p className="text-viking-gray leading-relaxed mb-6 text-sm sm:text-base">
+                  <p className="text-base leading-relaxed text-viking-gray">
                     {p.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-2">
                     {p.caps.map((cap) => (
                       <span
                         key={cap}
-                        className="inline-flex items-center gap-1.5 bg-viking-steel-light border border-viking-steel/20 text-viking-gray text-xs font-semibold px-3 py-1.5 rounded-full"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-viking-accent/25 bg-viking-cream px-3 py-1.5 text-xs font-semibold text-viking-gray"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-viking-accent flex-shrink-0" />
+                        <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-viking-accent" />
                         {cap}
                       </span>
                     ))}
                   </div>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-viking-accent font-bold text-sm hover:text-viking-accent-dark transition-colors group w-fit"
+                    className="group inline-flex w-fit items-center gap-2 text-sm font-bold text-viking-accent transition-colors hover:text-viking-accent-dark"
                   >
                     Request a Quote
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>

@@ -15,7 +15,7 @@ const products = [
     description:
       "Steel and fiberglass storage tanks built to API standards. Features include customizable designs, internal linings, and customer specified fittings for site-specific needs.",
     href: "/products#storage-tanks",
-    imageSrc: "/images/Gaupo3.webp",
+    imageSrc: "/images/tank-battery-aerial.webp",
     imageAlt: "Viking Inc. API storage tank battery",
   },
   {

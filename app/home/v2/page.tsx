@@ -26,7 +26,7 @@ const productCategories = [
     description:
       "API storage tanks built to your spec — couplings, flanges, internal coating, walkways, and custom configurations.",
     href: "/products#storage-tanks",
-    imageSrc: "/images/Gaupo3.webp",
+    imageSrc: "/images/tank-battery-aerial.webp",
     imageAlt: "Viking Inc. API storage tank battery — aerial view",
   },
   {
@@ -42,7 +42,7 @@ const productCategories = [
     description:
       "ASME code pressure vessels engineered for high-density compute cooling infrastructure. Custom sizing, fast turnaround.",
     href: "/products#data-center-cooling",
-    imageSrc: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    imageSrc: "/images/data-center-cooling.webp",
     imageAlt: "AI data center server infrastructure",
   },
 ];

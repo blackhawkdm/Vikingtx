@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import PageHeroFull from "@/components/PageHeroFull";
 
 export const metadata: Metadata = {
   title: "Oilfield Pressure Vessels & Storage Tanks",
@@ -92,40 +93,12 @@ const products = [
 export default function ProductsV1Page() {
   return (
     <>
-      {/* Hero — full-bleed (Figma 323:20418) */}
-      <section
-        className="relative flex min-h-[480px] items-center overflow-hidden bg-viking-black"
-        aria-label="Viking Inc. API storage tank battery — aerial view"
-      >
-        {/* Background image + overlays */}
-        <div className="absolute inset-0" aria-hidden="true">
-          <Image
-            src="/images/tank-battery-aerial.webp"
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="hero-media-overlay absolute inset-0" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/45 to-transparent" />
-        </div>
-
-        {/* Content */}
-        <div className="site-container relative z-10">
-          <div className="flex max-w-lg flex-col items-start gap-3.5 py-20">
-            <span className="animate-fade-up inline-flex items-center rounded-full border border-viking-accent bg-viking-accent/70 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-              Viking Inc.
-            </span>
-            <h1 className="animate-fade-up-delay-1 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-[60px] lg:leading-[63px] lg:tracking-[-0.02em]">
-              Engineered for Performance
-            </h1>
-            <p className="animate-fade-up-delay-2 max-w-md text-base font-medium leading-relaxed text-white sm:text-lg sm:leading-[29px]">
-              Our comprehensive catalog of custom-built vessels and tanks — code or non-code, standard or fully custom.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeroFull
+        headline="Engineered for Performance"
+        subhead="Our comprehensive catalog of custom-built vessels and tanks — code or non-code, standard or fully custom."
+        imageSrc="/images/tank-battery-aerial.webp"
+        imageAlt="Viking Inc. API storage tank battery — aerial view"
+      />
 
       {/* Sticky anchor nav */}
       <nav className="bg-white border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow-sm" aria-label="Products navigation">

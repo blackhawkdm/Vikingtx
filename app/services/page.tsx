@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
-import PageHero from "@/components/PageHero";
+import PageHeroFull from "@/components/PageHeroFull";
+import HeroStatBar from "@/components/HeroStatBar";
 
 export const metadata: Metadata = {
   title: "Coating, Delivery & Equipment Setting",
@@ -17,15 +18,15 @@ const services = [
     title: "Delivery & Equipment Setting",
     tagline: "We bring it. We set it.",
     description:
-      "Viking operates a fleet of crane and haul trucks capable of handling larger equipment than most operators encounter. We deliver your vessel directly to location and set it. Tank battery relocation also available.",
+      "We operate a private fleet of crane and haul trucks to eliminate the scheduling delays often associated with third party logistics. Our team handles the transport and the on-site setting of large diameter vessels and API tanks.",
     bullets: [
-      "Fleet of crane and haul trucks",
-      "Capable of handling larger equipment",
-      "Equipment setting on location",
-      "Tank battery relocation services",
+      "Private Fleet: Dedicated crane and haul trucks for total schedule control.",
+      "Heavy Haul Capability: Specialized transport for oversized oilfield equipment.",
+      "On Site Setting: Professional placement and setting on your location.",
+      "Battery Relocation: Teardown and transport services for site transitions.",
     ],
-    imageSrc: "/images/Drago1.webp",
-    imageAlt: "Viking delivering large vessels on location",
+    imageSrc: "/images/delivery-equipment-setting.webp",
+    imageAlt: "Viking crane setting tank battery vessels on location",
   },
   {
     id: "coating",
@@ -33,15 +34,15 @@ const services = [
     title: "Internal Coating",
     tagline: "In-house. No subcontractors.",
     description:
-      "All coating is done in-house at our Odessa facility. We apply internal coatings to protect vessels and tanks from corrosion, extending their service life. Multiple paint types available.",
+      "We manage the entire coating process in-house to ensure superior bond strength and corrosion protection. By eliminating third-party variables, we deliver specialized liners built for high-pressure and corrosive service.",
     bullets: [
-      "In-house — no subcontracting",
-      "Multiple paint types available",
-      "Pressure vessels and storage tanks",
-      "Corrosion protection",
+      "In House Application: We own the process from prep to finish with no subcontractors.",
+      "Corrosion Protection: Specialized liners designed for high pressure and corrosive service.",
+      "Controlled Environment: Shop application eliminates field variables and environmental contamination.",
+      "Total Protection: Available for all pressure vessels and API storage tanks.",
     ],
-    imageSrc: "/images/Gaupo1.webp",
-    imageAlt: "Viking completed tank battery installation",
+    imageSrc: "/images/api-storage-tanks.webp",
+    imageAlt: "Viking coated pressure vessels and storage tanks",
   },
   {
     id: "repair",
@@ -49,135 +50,126 @@ const services = [
     title: "Repair Services",
     tagline: "R-Stamp qualified. Code compliant.",
     description:
-      "Viking holds ASME R-Stamp qualification, authorizing us to perform pressure vessel repairs and alterations. Customers bring equipment to our shop for nozzle installation, structural modifications, and code-compliant repairs.",
+      "Minimize downtime with code-compliant repairs and modifications. As an R-Stamp qualified shop, we provide the technical expertise and documentation required to return your assets to service safely.",
     bullets: [
-      "ASME R-Stamp qualified",
-      "Pressure vessel repair and alteration",
-      "Nozzle installation and modifications",
-      "Code-compliant documentation",
+      "ASME R Stamp Qualified: Certified for repairs and alterations of code vessels.",
+      "Custom Modifications: Nozzle installations and structural adjustments to meet site specs.",
+      "Technical Integrity: Every repair is supported by code compliant documentation.",
+      "Sizing Support: Direct access to staff for assistance with design and sizing.",
     ],
-    imageSrc: "/images/Gaupo6.webp",
-    imageAlt: "Viking facility and equipment",
+    imageSrc: "/images/repair-services.webp",
+    imageAlt: "Viking welder performing an R-Stamp repair on a pressure vessel",
   },
 ];
 
 const certs = [
-  { label: "ASME Code Certified", sub: "Pressure vessels built to ASME Section VIII" },
-  { label: "National Board Registered", sub: "Registered manufacturer and repair organization" },
-  { label: "R-Stamp Qualified", sub: "Authorized for pressure vessel repair and alteration" },
-  { label: "Safety & Quality Program", sub: "Meeting the strictest standards expected by major operators" },
+  { label: "ASME Code Certified", sub: "Authorized to manufacture pressure vessels to strict Section VIII standards." },
+  { label: "National Board Registered", sub: "We maintain permanent records and lifelong traceability for every vessel we build." },
+  { label: "R-Stamp Qualified", sub: "Authorized to perform critical repairs and alterations on pressure-retaining items." },
+  { label: "Safety & Quality Program", sub: "Strict adherence to the internal QC and safety protocols required by major operators." },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        headline="Services"
-        subhead="Viking coats, delivers, sets, and repairs. Full-service from our Odessa facility."
-        imageSrc="/images/Drago1.webp"
+      <PageHeroFull
+        headline="Field Services & Support"
+        subhead="From delivery and equipment setting to on-site repairs, we provide full-service support for every vessel we build."
+        imageSrc="/images/products-hero-image.webp"
         imageAlt="Viking Inc. delivering large vessels on location"
       />
+      <HeroStatBar />
 
-      {/* Service sections — alternating image / content */}
-      <div className="space-y-6 bg-viking-light py-12">
+      {/* Service sections — alternating image / content (matches products, checkmark bullets) */}
+      <div className="bg-viking-light py-12">
         <div className="site-container space-y-6">
-      {services.map((svc, i) => (
-        <section
-          key={svc.id}
-          id={svc.id}
-          className="scroll-mt-20 rounded-xl overflow-hidden shadow-sm border border-viking-border bg-white"
-        >
-          <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+          {services.map((svc, i) => (
+            <section
+              key={svc.id}
+              id={svc.id}
+              className="scroll-mt-32 overflow-hidden rounded-xl border border-viking-border bg-white shadow"
+            >
+              <div className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
 
-              {/* Image panel */}
-              <div className="relative w-full lg:w-1/2 min-h-[340px] lg:min-h-[480px] overflow-hidden">
-                <Image
-                  src={svc.imageSrc}
-                  alt={svc.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                {/* Subtle dark veil */}
-                <div className="absolute inset-0 bg-viking-black/30" />
-                {/* Accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-viking-accent" />
-                {/* Large watermark number */}
-                <div className="absolute bottom-6 right-6 text-[100px] font-black text-white/10 leading-none select-none pointer-events-none">
-                  {svc.num}
+                {/* Image panel */}
+                <div className="relative min-h-[300px] w-full overflow-hidden lg:min-h-[440px] lg:w-1/2">
+                  <Image
+                    src={svc.imageSrc}
+                    alt={svc.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-viking-black/25" />
+                  <div className="absolute inset-x-0 top-0 h-1 bg-viking-accent" />
+                  <div className="absolute left-6 top-6">
+                    <span className="inline-block rounded-full bg-black/50 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm">
+                      {svc.tagline}
+                    </span>
+                  </div>
                 </div>
-                {/* Tagline pill */}
-                <div className="absolute top-6 left-6">
-                  <span className="inline-block bg-black/50 backdrop-blur-sm text-white/80 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-                    {svc.tagline}
-                  </span>
+
+                {/* Content panel */}
+                <div className="flex w-full flex-col justify-center gap-6 px-8 py-10 lg:w-1/2 lg:px-12 lg:py-12">
+                  <h2 className="text-2xl font-extrabold tracking-tight text-viking-black lg:text-3xl">
+                    {svc.title}
+                  </h2>
+                  <p className="text-base leading-relaxed text-viking-gray">
+                    {svc.description}
+                  </p>
+                  <ul className="flex flex-col gap-[18px]">
+                    {svc.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3">
+                        <span className="mt-0.5 flex size-5 flex-shrink-0 items-center justify-center rounded-full border border-viking-accent bg-viking-cream">
+                          <svg className="size-3 text-viking-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-sm text-viking-gray">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="group inline-flex w-fit items-center gap-2 text-sm font-bold text-viking-accent transition-colors hover:text-viking-accent-dark"
+                  >
+                    Request a Quote
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
-              </div>
 
-              {/* Content panel */}
-              <div className="w-full lg:w-1/2 px-8 sm:px-12 py-12 lg:py-16 flex flex-col justify-center">
-                <p className="text-viking-steel text-xs font-black uppercase tracking-widest mb-3">
-                  {svc.num}
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-black text-viking-black tracking-tight mb-4">
-                  {svc.title}
-                </h2>
-                <p className="text-viking-gray leading-relaxed mb-7 text-sm sm:text-base">
-                  {svc.description}
-                </p>
-                <ul className="space-y-3 mb-8">
-                  {svc.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <span className="mt-1.5 w-5 h-5 rounded-full bg-viking-steel-light border border-viking-steel/30 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-viking-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                      <span className="text-viking-gray text-sm">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-viking-accent font-bold text-sm hover:text-viking-accent-dark transition-colors group w-fit"
-                >
-                  Request a Quote
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
-
-            </div>
-        </section>
-      ))}
+            </section>
+          ))}
         </div>
       </div>
 
-      {/* Certifications — dark strip */}
-      <section id="certifications" className="bg-viking-black py-14">
+      {/* Certifications & Standards (Figma 152:2774) */}
+      <section id="certifications" className="bg-white py-16">
         <div className="site-container">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-viking-black tracking-tight">
               Certifications &amp; Standards
             </h2>
-            <p className="text-white/50 mt-2 text-sm">
-              We meet the strictest safety standards expected by major operators.
+            <p className="mt-2 mx-auto max-w-xl text-sm text-viking-gray">
+              Code-compliant manufacturing backed by industry-leading quality and safety programs.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certs.map((c) => (
               <div
                 key={c.label}
-                className="card-hover bg-white/5 border border-white/10 rounded-xl p-6 text-center"
+                className="rounded-xl border border-viking-accent bg-viking-cream p-6 text-center"
               >
-                <div className="w-10 h-10 rounded-full bg-viking-accent/15 border border-viking-accent/30 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-5 h-5 text-viking-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                <div className="mx-auto mb-4 flex size-10 items-center justify-center rounded-full border border-viking-accent-dark bg-viking-accent">
+                  <svg className="size-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-bold text-white text-sm mb-1">{c.label}</h3>
-                <p className="text-white/40 text-xs leading-relaxed">{c.sub}</p>
+                <h3 className="mb-1 text-sm font-bold text-viking-black">{c.label}</h3>
+                <p className="text-xs leading-relaxed text-viking-gray">{c.sub}</p>
               </div>
             ))}
           </div>
@@ -185,8 +177,8 @@ export default function ServicesPage() {
       </section>
 
       <CTABanner
-        heading="Questions about our services?"
-        subtext="Call 432-337-1900 or fill out the form and we'll get back to you fast."
+        heading="Need Technical Assistance?"
+        subtext="Contact our Odessa office to discuss sizing or project specifications."
       />
     </>
   );

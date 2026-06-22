@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
-import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Contact Viking | Request a Quote",
@@ -12,12 +12,52 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        headline="Contact Us"
-        subhead="We respond fast. Call for immediate assistance or fill out the form below."
-        imageSrc="/images/Bruce1.webp"
-        imageAlt="Viking Inc. tank battery installation on location"
-      />
+      {/* Hero — split, white (Figma 147:1664) */}
+      <section className="relative flex min-h-[440px] flex-col overflow-hidden bg-white">
+        <div className="relative flex flex-1 flex-col lg:block">
+
+          {/* Right — photo, full-bleed diagonal (desktop) */}
+          <div className="clip-diagonal absolute inset-y-0 right-0 hidden w-1/2 lg:block">
+            <Image
+              src="/images/contact-us-hero-image.webp"
+              alt="Viking welder working inside a vessel at the Odessa shop"
+              fill
+              priority
+              className="object-cover"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-viking-black/25" />
+          </div>
+
+          {/* Left content */}
+          <div className="site-container relative z-10">
+            <div className="flex w-full flex-col justify-center gap-3.5 py-16 lg:min-h-[440px] lg:w-[52%] lg:py-20">
+              <p className="animate-fade-up text-xs font-bold uppercase tracking-[0.1em] text-viking-accent">
+                Viking Inc.
+              </p>
+              <h1 className="animate-fade-up-delay-1 text-4xl font-extrabold leading-tight tracking-tight text-viking-black sm:text-5xl lg:text-[48px] lg:leading-[60px] lg:tracking-[-0.025em]">
+                Contact Us
+              </h1>
+              <p className="animate-fade-up-delay-2 max-w-md text-base leading-relaxed text-viking-gray sm:text-lg">
+                Talk to our Odessa team about your next build or service call. We&apos;ll respond as quickly as possible to keep your job moving.
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile + tablet — photo below text */}
+          <div className="relative h-56 w-full md:h-[460px] lg:hidden">
+            <Image
+              src="/images/contact-us-hero-image.webp"
+              alt="Viking welder working inside a vessel at the Odessa shop"
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-viking-black/25" />
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white py-16">
         <div className="site-container">
@@ -25,13 +65,13 @@ export default function ContactPage() {
             {/* Left: Call + Office Info + Map */}
             <div className="space-y-8">
               {/* Click-to-call */}
-              <div className="bg-viking-accent rounded-lg p-8 text-center sm:text-left">
+              <div className="bg-viking-accent rounded-lg p-8 text-left">
                 <p className="text-white/80 text-sm font-semibold uppercase tracking-wider mb-2">
                   For immediate assistance
                 </p>
                 <a
                   href="tel:4323371900"
-                  className="flex flex-col sm:flex-row items-center gap-3 group"
+                  className="flex items-center gap-3 group"
                 >
                   <div className="bg-white/20 rounded-full p-3 group-hover:bg-white/30 transition-colors">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -46,10 +86,10 @@ export default function ContactPage() {
 
               {/* Office info */}
               <div className="space-y-4">
-                <h2 className="text-xl font-black text-viking-black">Office</h2>
+                <h2 className="text-xl font-extrabold text-viking-black">Office</h2>
                 <ul className="space-y-3 text-viking-gray text-sm">
                   <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-viking-steel shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg className="w-5 h-5 text-viking-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     <span>
@@ -65,7 +105,7 @@ export default function ContactPage() {
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-viking-steel shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <svg className="w-5 h-5 text-viking-accent shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
@@ -85,7 +125,7 @@ export default function ContactPage() {
 
             {/* Right: Form */}
             <div>
-              <h2 className="text-xl font-black text-viking-black mb-6">Request a Quote</h2>
+              <h2 className="text-xl font-extrabold text-viking-black mb-6">Request a Quote</h2>
               <ContactForm />
             </div>
           </div>

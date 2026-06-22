@@ -7,7 +7,7 @@ const products = [
     description:
       "Designed for 2-phase and 3-phase separation. We build heater treaters, separators, FWKOs, and VRTs to meet your specific needs and design pressures.",
     href: "/products#heater-treaters",
-    imageSrc: "/images/Gaupo5.webp",
+    imageSrc: "/images/oilfield-production-equipment-card.webp",
     imageAlt: "Viking Inc. oilfield production equipment — aerial view",
   },
   {
@@ -15,7 +15,7 @@ const products = [
     description:
       "Steel and fiberglass storage tanks built to API standards. Features include customizable designs, internal linings, and customer specified fittings for site-specific needs.",
     href: "/products#storage-tanks",
-    imageSrc: "/images/tank-battery-aerial.webp",
+    imageSrc: "/images/api-storage-tanks-card.webp",
     imageAlt: "Viking Inc. API storage tank battery",
   },
   {
@@ -23,7 +23,7 @@ const products = [
     description:
       "Professionally engineered vessels for your unique applications. We manufacture gas scrubbers, knock-out drums, and pressure vessels that meet rigorous industry standards.",
     href: "/products#specialty-vessels",
-    imageSrc: "/images/TiffanyWilsohPhotography--10.webp",
+    imageSrc: "/images/asme-pressure-vessels-card.webp",
     imageAlt: "Viking Inc. welder fabricating a pressure vessel",
   },
   {
@@ -31,7 +31,7 @@ const products = [
     description:
       "High-capacity liquid cooling and thermal storage tanks. We use our knowledge and expertise to provide the cooling requirements of modern computing facilities.",
     href: "/products#data-center-cooling",
-    imageSrc: "/images/Bruce1.webp",
+    imageSrc: "/images/ai-data-center-card.webp",
     imageAlt: "Viking Inc. liquid cooling equipment for data centers",
   },
 ];

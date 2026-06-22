@@ -206,7 +206,7 @@ export default function AboutPage() {
 
           {/* Right content */}
           <div className="site-container relative z-10">
-            <div className="flex w-full flex-col justify-center pb-16 pt-12 lg:ml-auto lg:min-h-[491px] lg:w-[52%] lg:py-20 lg:pl-8">
+            <div className="flex w-full flex-col justify-center pb-16 pt-12 lg:ml-auto lg:min-h-[491px] lg:w-[52%] lg:py-20 lg:pl-14">
               <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-viking-accent">
                 Our Odessa Facility.
               </h2>

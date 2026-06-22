@@ -17,8 +17,6 @@ export default function HomePage() {
       <HeroBanner
         headline="Precision Engineered. Field-Ready Performance."
         subhead="We provide code-compliant pressure vessels and storage solutions for high-stakes environments. Built with 50 years of industry experience and zero compromise on safety."
-        imageSrc="/images/Gaupo1.webp"
-        imageAlt="Viking Inc. tank battery installation in the Permian Basin"
       />
 
       <ProductionLineup />

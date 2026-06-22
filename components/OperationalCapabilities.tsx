@@ -26,11 +26,37 @@ const capabilities = [
 
 export default function OperationalCapabilities() {
   return (
-    <section className="overflow-hidden bg-viking-cream py-12 sm:py-16 lg:py-[60px]">
-      <div className="site-container">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch lg:gap-12">
+    <section className="relative overflow-hidden bg-viking-cream py-12 sm:py-16 lg:py-[60px]">
+      {/* Right — diagonal facility image, full-bleed to the viewport's right edge (desktop) */}
+      <div className="absolute inset-y-0 right-0 hidden w-[46%] lg:block">
+        <div className="clip-diagonal absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/facility-aerial.webp"
+            alt="Aerial view of the Viking manufacturing facility and product yard in Odessa, Texas"
+            fill
+            className="rotate-[9.79deg] scale-[1.2] object-cover object-[58%_42%]"
+            sizes="50vw"
+          />
+        </div>
+      </div>
+
+      {/* Mobile — facility photo (rounded card, above content) */}
+      <div className="site-container mb-8 lg:hidden">
+        <div className="relative h-72 w-full overflow-hidden rounded-xl shadow-md">
+          <Image
+            src="/images/facility-aerial.webp"
+            alt="Aerial view of the Viking manufacturing facility and product yard in Odessa, Texas"
+            fill
+            className="object-cover object-[center_40%]"
+            sizes="100vw"
+          />
+        </div>
+      </div>
+
+      <div className="site-container relative">
+        <div className="flex flex-col gap-10">
           {/* Left — copy */}
-          <div className="flex flex-col gap-8 lg:w-[55%] lg:shrink-0">
+          <div className="flex flex-col gap-8 lg:w-[55%] lg:shrink-0 lg:pr-12">
             {/* Heading + section link */}
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
               <div className="flex max-w-[488px] flex-col gap-3">
@@ -69,31 +95,7 @@ export default function OperationalCapabilities() {
               ))}
             </div>
           </div>
-
-          {/* Right — diagonal facility image (desktop); bleeds to the section's right edge */}
-          <div className="relative hidden min-h-[480px] self-stretch lg:block lg:flex-1 lg:[margin-right:calc(var(--spacing-gutter-lg)*-1)] xl:[margin-right:calc(var(--spacing-gutter-xl)*-1)]">
-            <div className="clip-diagonal absolute inset-0 overflow-hidden">
-              <Image
-                src="/images/facility-aerial.webp"
-                alt="Aerial view of the Viking manufacturing facility in Odessa, Texas"
-                fill
-                className="rotate-[9.79deg] scale-[1.3] object-cover object-center"
-                sizes="45vw"
-              />
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* Mobile image strip */}
-      <div className="relative mt-10 h-56 w-full lg:hidden">
-        <Image
-          src="/images/facility-aerial.webp"
-          alt="Aerial view of the Viking manufacturing facility in Odessa, Texas"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
       </div>
     </section>
   );

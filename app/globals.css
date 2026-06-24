@@ -41,6 +41,7 @@ body {
 
 /* ── Flip card ── */
 .flip-card-inner {
+  display: grid; /* stack both faces in one cell so the card auto-sizes to the tallest */
   transform-style: preserve-3d;
   transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -51,6 +52,7 @@ body {
 }
 
 .flip-card-face {
+  grid-area: 1 / 1; /* stack faces; cell grows to fit the taller (back) content */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }

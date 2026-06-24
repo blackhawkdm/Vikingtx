@@ -102,8 +102,8 @@ export default function ServicesPage() {
                   />
                   <div className="absolute inset-0 bg-viking-black/25" />
                   <div className="absolute inset-x-0 top-0 h-1 bg-viking-accent" />
-                  <div className="absolute left-6 top-6">
-                    <span className="inline-block rounded-full bg-black/50 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm">
+                  <div className="absolute inset-x-4 top-4 flex justify-center sm:inset-x-auto sm:left-6 sm:top-6 sm:block">
+                    <span className="inline-block max-w-full rounded-full bg-black/50 px-3 py-1.5 text-center text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm sm:text-left">
                       {svc.tagline}
                     </span>
                   </div>

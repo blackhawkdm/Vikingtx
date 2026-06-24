@@ -12,15 +12,15 @@ interface TeamMemberProps {
 export default function TeamMember({ name, title, bio, imageSrc }: TeamMemberProps) {
   return (
     <div
-      className="flip-card group relative h-[420px] rounded-xl overflow-visible cursor-pointer focus-within:outline-none"
+      className="flip-card group relative grid rounded-xl overflow-visible cursor-pointer focus-within:outline-none"
       tabIndex={0}
       role="button"
       aria-label={`${name} — hover or tap to read bio`}
     >
-      <div className="flip-card-inner relative w-full h-full">
+      <div className="flip-card-inner relative w-full min-h-[420px]">
 
         {/* ── FRONT ── */}
-        <div className="flip-card-face absolute inset-0 rounded-xl overflow-hidden shadow-md">
+        <div className="flip-card-face relative overflow-hidden rounded-xl shadow-md">
           {/* Photo */}
           <div className="absolute inset-0">
             {imageSrc ? (
@@ -49,7 +49,7 @@ export default function TeamMember({ name, title, bio, imageSrc }: TeamMemberPro
         </div>
 
         {/* ── BACK ── */}
-        <div className="flip-card-face flip-card-back absolute inset-0 rounded-xl overflow-hidden bg-viking-grey shadow-xl flex flex-col justify-between p-7">
+        <div className="flip-card-face flip-card-back relative flex flex-col justify-between overflow-hidden rounded-xl bg-viking-grey p-7 shadow-xl">
           <div>
             <div className="w-full h-1 bg-viking-accent rounded-full mb-5" />
             <h3 className="font-extrabold text-white text-xl tracking-tight mb-1.5">{name}</h3>

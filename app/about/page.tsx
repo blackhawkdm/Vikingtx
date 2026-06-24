@@ -66,10 +66,10 @@ export default function AboutPage() {
               <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-base leading-relaxed text-viking-gray sm:text-lg">
                 Three leaders. A lifetime of industry experience. Every vessel we build carries that collective knowledge.
               </p>
-              <div className="animate-fade-up-delay-3 flex flex-col items-start gap-3 sm:flex-row">
+              <div className="animate-fade-up-delay-3 flex flex-col items-stretch gap-3 sm:flex-row">
                 <a
                   href="tel:4323371900"
-                  className="inline-flex min-h-[52px] items-center gap-2 rounded-lg bg-viking-accent px-6 py-3.5 text-base font-bold text-white transition-colors duration-200 hover:bg-viking-accent-dark"
+                  className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-viking-accent px-6 py-3.5 text-base font-bold text-white transition-colors duration-200 hover:bg-viking-accent-dark"
                 >
                   <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-[52px] items-center gap-2 rounded-lg border-2 border-viking-accent px-6 py-3.5 text-base font-semibold text-viking-accent transition-colors duration-200 hover:bg-viking-accent/10"
+                  className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-lg border-2 border-viking-accent px-6 py-3.5 text-base font-semibold text-viking-accent transition-colors duration-200 hover:bg-viking-accent/10"
                 >
                   Request a Quote
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

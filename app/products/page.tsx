@@ -101,15 +101,14 @@ export default function ProductsV1Page() {
       />
 
       {/* Sticky anchor nav */}
-      <nav className="bg-white border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow-sm" aria-label="Products navigation">
-        <div className="site-container flex min-w-max items-center gap-0 py-0">
-          {products.map(({ id, num, title }) => (
+      <nav className="bg-viking-accent border-b border-viking-border sticky top-16 z-40 overflow-x-auto shadow" aria-label="Products navigation">
+        <div className="site-container flex min-w-max items-center gap-2 py-0">
+          {products.map(({ id, title }) => (
             <a
               key={id}
               href={`#${id}`}
-              className="flex items-center gap-2 text-xs font-bold text-viking-gray hover:text-viking-accent hover:bg-viking-light px-4 py-3.5 border-b-2 border-transparent hover:border-viking-accent transition-all whitespace-nowrap uppercase tracking-wide"
+              className="flex items-center whitespace-nowrap border-b-2 border-transparent px-4 py-[15px] text-xs font-bold uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-black/10"
             >
-              <span className="text-viking-steel/70">{num}</span>
               {title}
             </a>
           ))}
@@ -138,8 +137,8 @@ export default function ProductsV1Page() {
                   />
                   <div className="absolute inset-0 bg-viking-black/25" />
                   <div className="absolute inset-x-0 top-0 h-1 bg-viking-accent" />
-                  <div className="absolute left-6 top-6">
-                    <span className="inline-block rounded-full bg-black/50 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm">
+                  <div className="absolute inset-x-4 top-4 flex justify-center sm:inset-x-auto sm:left-6 sm:top-6 sm:block">
+                    <span className="inline-block max-w-full rounded-full bg-black/50 px-3 py-1.5 text-center text-xs font-bold uppercase tracking-widest text-white/80 backdrop-blur-sm sm:text-left">
                       {p.tagline}
                     </span>
                   </div>

@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${barlow.variable} h-full`}>
+    <html lang="en" className={`${barlow.variable} h-full`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-barlow)]" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>

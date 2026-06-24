@@ -235,7 +235,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CertBadges />
+      <CertBadges
+        title="Credentials That Define Our Standards."
+        subtitle="Industry-leading compliance backed by 50+ years of oilfield expertise."
+        descriptions={[
+          "Authorized to manufacture code-stamped pressure vessels. Every unit is engineered to Section VIII standards for reliable performance under high-pressure conditions.",
+          "We provide permanent documentation and traceability for every vessel. This ensures your assets remain fully compliant and verifiable for their entire lifecycle.",
+          "Certified for critical repairs and alterations on pressure-retaining equipment. We provide the code-compliant documentation required to return your assets to service.",
+        ]}
+      />
 
       <CTABanner heading="Bring Viking's technical authority to your next project." />
     </>

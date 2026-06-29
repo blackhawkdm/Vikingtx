@@ -46,8 +46,18 @@ body {
   transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.flip-card:hover .flip-card-inner,
-.flip-card:focus-within .flip-card-inner {
+/* Hover flip only on devices that actually hover (mouse) */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+/* Keyboard focus flips; :focus-visible avoids sticking on touch taps */
+.flip-card:focus-visible .flip-card-inner {
+  transform: rotateY(180deg);
+}
+/* Tap toggle (touch) */
+.flip-card-inner.is-flipped {
   transform: rotateY(180deg);
 }
 

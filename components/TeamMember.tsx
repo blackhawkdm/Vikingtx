@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 interface TeamMemberProps {
@@ -10,14 +11,22 @@ interface TeamMemberProps {
 }
 
 export default function TeamMember({ name, title, bio, imageSrc }: TeamMemberProps) {
+  const [flipped, setFlipped] = useState(false);
+
+  // On touch devices, tap toggles the flip (back to the photo); desktop uses hover.
+  const handleTap = () => {
+    if (window.matchMedia("(hover: none)").matches) setFlipped((f) => !f);
+  };
+
   return (
     <div
       className="flip-card group relative grid rounded-xl overflow-visible cursor-pointer focus-within:outline-none"
       tabIndex={0}
       role="button"
       aria-label={`${name} — hover or tap to read bio`}
+      onClick={handleTap}
     >
-      <div className="flip-card-inner relative w-full min-h-[420px]">
+      <div className={`flip-card-inner relative w-full min-h-[420px]${flipped ? " is-flipped" : ""}`}>
 
         {/* ── FRONT ── */}
         <div className="flip-card-face relative overflow-hidden rounded-xl shadow-md">

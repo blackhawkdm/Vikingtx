@@ -22,7 +22,7 @@ const team = [
   {
     name: "Taylor Grimes",
     title: "Vice President",
-    bio: "Taylor Grimes directs the daily manufacturing operations, ensuring that Viking’s high standards for quality and safety are met on every build. Educated at Kilgore College and with over 45 years of experience in the oil industry, Taylor brings deep expertise to every project — coordinating the transition from engineering designs to finished products with a strict focus on code compliance and timeline management.",
+    bio: "Taylor Grimes leads Viking’s operations, directing day-to-day manufacturing and overseeing the trucking fleet that delivers and sets equipment on location. Educated at Kilgore College and with over 45 years across manufacturing and oilfield services, he keeps production and logistics moving in sync — making sure every order is built to Viking’s standards and reaches the field on schedule.",
     imageSrc: "/images/Taylor-Grimes-Headshot.webp",
   },
   {
@@ -37,25 +37,25 @@ export default function AboutPage() {
   return (
     <>
       {/* ── Hero — split, white (Figma 139:309) ── */}
-      <section className="relative flex min-h-[520px] flex-col overflow-hidden bg-white">
+      <section className="relative flex min-h-[520px] flex-col overflow-hidden bg-white md:min-h-[max(520px,40vw)]">
         {/* Hero body — content + diagonal photo */}
-        <div className="relative flex flex-1 flex-col lg:block">
+        <div className="relative flex flex-1 flex-col md:block">
 
-          {/* Right — group photo, full-bleed diagonal (desktop) */}
-          <div className="clip-diagonal absolute inset-y-0 right-0 hidden w-1/2 lg:block">
+          {/* Right — group photo, full-bleed diagonal (tablet + desktop) */}
+          <div className="clip-diagonal absolute inset-y-0 right-0 hidden w-1/2 md:block">
             <Image
               src="/images/about-page-hero.webp"
               alt="Viking Inc. leadership — Joe Keith Martin, Michael Ashton, and Taylor Grimes"
               fill
               priority
-              className="object-cover object-top"
+              className="object-cover object-center"
               sizes="50vw"
             />
           </div>
 
           {/* Left content */}
           <div className="site-container relative z-10">
-            <div className="flex w-full flex-col justify-center py-16 lg:min-h-[520px] lg:w-[52%] lg:py-24">
+            <div className="flex w-full flex-col justify-center py-16 md:min-h-[520px] md:w-1/2 md:py-20 md:pr-10 lg:pr-16">
               <p className="animate-fade-up mb-6 text-xs font-bold uppercase tracking-[0.1em] text-viking-accent">
                 Viking Inc. — Odessa, Texas
               </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <p className="animate-fade-up-delay-2 mb-8 max-w-xl text-base leading-relaxed text-viking-gray sm:text-lg">
                 Three leaders. A lifetime of industry experience. Every vessel we build carries that collective knowledge.
               </p>
-              <div className="animate-fade-up-delay-3 flex flex-col items-stretch gap-3 sm:flex-row">
+              <div className="animate-fade-up-delay-3 flex flex-col items-stretch gap-3 lg:flex-row">
                 <a
                   href="tel:4323371900"
                   className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-lg border-2 border-transparent bg-viking-accent px-6 py-3.5 text-base font-bold text-white transition-colors duration-200 hover:bg-viking-accent-dark"
@@ -89,14 +89,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Mobile — photo strip below text */}
-          <div className="relative h-72 w-full lg:hidden">
+          {/* Mobile (below tablet) — photo strip below text */}
+          <div className="relative aspect-[5/4] w-full md:hidden">
             <Image
               src="/images/about-page-hero.webp"
               alt="Viking Inc. leadership team"
               fill
               priority
-              className="object-cover object-top"
+              className="object-cover object-center"
               sizes="100vw"
             />
           </div>

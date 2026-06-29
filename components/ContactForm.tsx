@@ -12,6 +12,9 @@ const interests = [
   "Other",
 ];
 
+// Formspree endpoint for the Viking Contact form
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqevlvaj";
+
 type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
@@ -25,15 +28,20 @@ export default function ContactForm() {
     const data = {
       firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value,
       lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       interest: (form.elements.namedItem("interest") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      _subject: "New inquiry from the Viking website",
     };
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(data),
       });
 
@@ -94,6 +102,20 @@ export default function ContactForm() {
             className="w-full border border-viking-border rounded px-3 py-2.5 text-viking-black text-sm focus:outline-none focus:ring-2 focus:ring-viking-accent focus:border-transparent"
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-semibold text-viking-black mb-1">
+          Email <span className="text-red-500" aria-hidden="true">*</span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+          className="w-full border border-viking-border rounded px-3 py-2.5 text-viking-black text-sm focus:outline-none focus:ring-2 focus:ring-viking-accent focus:border-transparent"
+        />
       </div>
 
       <div>

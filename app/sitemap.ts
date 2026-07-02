@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://vikingtx.com";
+const SITE_URL = "https://www.vikingtx.com";
 
 // Public, indexable routes. /thank-you is intentionally excluded (noindex).
 const routes = ["", "/products", "/services", "/about", "/contact", "/privacy-policy"];

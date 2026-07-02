@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Viking manufactures custom steel tanks, supplies oilfield parts, and provides field trucking across Texas. Built for the oilfield. Ready for what's next. Request a quote today.",
-  metadataBase: new URL("https://vikingtx.com"),
+  metadataBase: new URL("https://www.vikingtx.com"),
 };
 
 export default function RootLayout({

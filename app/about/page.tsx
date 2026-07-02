@@ -7,6 +7,7 @@ import CTABanner from "@/components/CTABanner";
 import HeroStatBar from "@/components/HeroStatBar";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Viking | ASME Certified Tank Manufacturer TX",
   description:
     "Meet the Viking team — Joe Keith Martin, Michael Ashton, and Taylor Grimes — with decades of oilfield experience. Learn about our 40,000 sq ft Odessa facility, ASME certifications, and commitment to precision manufacturing.",

@@ -6,6 +6,7 @@ import PageHeroFull from "@/components/PageHeroFull";
 import HeroStatBar from "@/components/HeroStatBar";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Coating, Delivery & Equipment Setting",
   description:
     "Viking provides internal coating for corrosion protection, full-service delivery using crane and haul trucks, and professional equipment setting. ASME certified, National Board registered, and R-stamp qualified for repairs.",

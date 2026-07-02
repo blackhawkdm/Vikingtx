@@ -24,6 +24,24 @@ export const metadata: Metadata = {
   description:
     "Viking manufactures custom steel tanks, supplies oilfield parts, and provides field trucking across Texas. Built for the oilfield. Ready for what's next. Request a quote today.",
   metadataBase: new URL("https://www.vikingtx.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.vikingtx.com",
+    siteName: "Viking Inc.",
+    title: "Viking – Custom Oilfield Tanks, Parts & Trucking",
+    description:
+      "ASME-certified oilfield tanks and pressure vessels, parts, and field trucking out of Odessa, Texas. Request a quote today.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Viking – Custom Oilfield Tanks, Parts & Trucking",
+    description:
+      "ASME-certified oilfield tanks and pressure vessels, parts, and field trucking out of Odessa, Texas. Request a quote today.",
+  },
 };
 
 export default function RootLayout({

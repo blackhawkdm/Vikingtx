@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import MapEmbed from "@/components/MapEmbed";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Viking | Request a Quote",
   description:
     "Ready to talk tanks, parts, or trucking? Contact Viking's team to request a quote, ask about availability, or get directions to our facility. We respond fast — call or fill out the form.",

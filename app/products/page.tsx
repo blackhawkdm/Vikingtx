@@ -5,6 +5,7 @@ import CTABanner from "@/components/CTABanner";
 import PageHeroFull from "@/components/PageHeroFull";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/products" },
   title: "Oilfield Pressure Vessels & Storage Tanks",
   description:
     "Viking manufactures ASME code and non-code pressure vessels, heater treaters, separators, vapor recovery towers, API storage tanks, and specialty vessels — including cooling vessels for data center applications.",

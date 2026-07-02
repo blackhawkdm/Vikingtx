@@ -1,6 +1,9 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { sendGTMEvent } from "@next/third-parties/google";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const interests = [
   "Pressure Vessels",
@@ -15,17 +18,33 @@ const interests = [
 // Formspree endpoint for the Viking Contact form
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqevlvaj";
 
-type FormState = "idle" | "submitting" | "success" | "error";
+// reCAPTCHA v2 site key (public). If it's unset — e.g. on a preview build —
+// the captcha is skipped so the form still works.
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+type FormState = "idle" | "submitting" | "error";
 
 export default function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const router = useRouter();
+
+  const captchaEnabled = Boolean(RECAPTCHA_SITE_KEY);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    // If the captcha is active, require the box to be checked first.
+    if (captchaEnabled && !captchaToken) {
+      setState("error");
+      return;
+    }
+
     setState("submitting");
 
     const form = e.currentTarget;
-    const data = {
+    const data: Record<string, string> = {
       firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value,
       lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
@@ -34,6 +53,13 @@ export default function ContactForm() {
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       _subject: "New inquiry from the Viking website",
     };
+
+    // Honeypot: real users never see this; bots fill it and Formspree drops them.
+    const gotcha = (form.elements.namedItem("_gotcha") as HTMLInputElement)?.value;
+    if (gotcha) data._gotcha = gotcha;
+
+    // Include the reCAPTCHA token so Formspree can verify it server-side.
+    if (captchaToken) data["g-recaptcha-response"] = captchaToken;
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -46,31 +72,18 @@ export default function ContactForm() {
       });
 
       if (res.ok) {
-        setState("success");
-        form.reset();
+        sendGTMEvent({ event: "contact_form_submit" });
+        router.push("/thank-you");
       } else {
         setState("error");
+        recaptchaRef.current?.reset();
+        setCaptchaToken(null);
       }
     } catch {
       setState("error");
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
     }
-  }
-
-  if (state === "success") {
-    return (
-      <div className="bg-viking-teal/10 border border-viking-teal rounded-lg p-8 text-center">
-        <svg className="w-12 h-12 text-viking-teal mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h3 className="text-viking-black font-bold text-xl mb-2">Message Sent</h3>
-        <p className="text-viking-gray">
-          We&apos;ve received your inquiry and will be in touch shortly. For immediate assistance, call{" "}
-          <a href="tel:4323371900" className="text-viking-accent font-semibold">
-            432-337-1900
-          </a>.
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -163,16 +176,36 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Honeypot — hidden from real users; bots fill it and get dropped */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
+      {/* reCAPTCHA v2 checkbox — only renders when the site key is present */}
+      {captchaEnabled && (
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={RECAPTCHA_SITE_KEY as string}
+          onChange={(token) => setCaptchaToken(token)}
+          onExpired={() => setCaptchaToken(null)}
+        />
+      )}
+
       {state === "error" && (
         <p className="text-red-600 text-sm">
-          Something went wrong. Please try again or call us at{" "}
+          Something went wrong. Please check the box and try again, or call us at{" "}
           <a href="tel:4323371900" className="underline">432-337-1900</a>.
         </p>
       )}
 
       <button
         type="submit"
-        disabled={state === "submitting"}
+        disabled={state === "submitting" || (captchaEnabled && !captchaToken)}
         className="w-full bg-viking-accent hover:bg-viking-accent-dark disabled:opacity-60 text-white font-bold py-3 rounded transition-colors text-base min-h-[44px]"
       >
         {state === "submitting" ? "Sending..." : "Send Message"}
